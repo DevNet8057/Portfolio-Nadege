@@ -22,9 +22,9 @@ export const portfolioItems: PortfolioItem[] = [
   {
     id: 3,
     image:
-      "https://readdy.ai/api/search-image?query=Modern%20technology%20devices%20on%20desk%2C%20smartphone%2C%20tablet%2C%20laptop%2C%20tech%20gadgets%20with%20glowing%20screens%2C%20clean%20minimal%20setup%2C%20professional%20product%20photography&width=400&height=300&seq=portfolio3&orientation=landscape",
-    title: "L'influence des réseaux sociaux",
-    category: "Podcasts",
+      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
+    title: "",
+    category: "Photos",
     description:
       "Comment les plateformes numériques transforment notre société.",
   },
@@ -34,6 +34,7 @@ export const portfolioItems: PortfolioItem[] = [
       "https://readdy.ai/api/search-image?query=Traditional%20food%20market%20with%20local%20vendors%2C%20colorful%20produce%20displays%2C%20bustling%20atmosphere%2C%20authentic%20cultural%20scene%2C%20documentary%20style%20photography&width=400&height=300&seq=portfolio4&orientation=landscape",
     title: "Traditions culinaires en danger",
     category: "Vidéos",
+    videoUrl: "/src/assets/Videos/Minat_ Thierry Marchand reçu en audience.mp4", // ou autre URL d'intégration
     description:
       "Exploration des traditions culinaires menacées par la mondialisation.",
   },
@@ -50,8 +51,101 @@ export const portfolioItems: PortfolioItem[] = [
     id: 6,
     image:
       "https://readdy.ai/api/search-image?query=Healthcare%20workers%20in%20hospital%20setting%2C%20medical%20staff%20in%20protective%20equipment%2C%20caring%20for%20patients%2C%20professional%20healthcare%20documentary%20photography&width=400&height=300&seq=portfolio6&orientation=landscape",
-    title: "Système de santé en crise",
+    thumbnail:
+      "/src/assets/images/le savoir faire de la police.png",
+      title: "Système de santé en crise",
     category: "Vidéos",
+    videoUrl: "/src/assets/Videos/LE_SAVOIR-FAIRE_DE_LA_POLICE.mp4",
+    
     description: "Les défis auxquels font face les systèmes de santé modernes.",
   },
+  {
+    id: 4,
+    image:
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80", // miniature test
+    thumbnail:
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
+    title: "Traditions culinaires en danger",
+    category: "Vidéos",
+    videoUrl: "/src/assets/Videos/bertoua.mp4",
+    description:
+      "Exploration des traditions culinaires menacées par la mondialisation.",
+  },
+  {
+    id: 6,
+    image:
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", // miniature test
+    thumbnail:
+      "/src/assets/images/parade du 20 mai.png",
+    title: "Système de santé en crise",
+    category: "Vidéos",
+    videoUrl: "/src/assets/Videos/parade du 20 Mai.mp4",
+    description: "Les défis auxquels font face les systèmes de santé modernes.",
+  },
+  {
+    id: 7,
+    image:
+      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.09.jpeg",
+    title: "",
+    category: "Photos",
+    description:
+      "Comment les plateformes numériques transforment notre société.",
+  },
+  {
+    id: 8,
+    image:
+      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (1).jpeg",
+    title: "",
+    category: "Photos",
+    description:
+      "Comment les plateformes numériques transforment notre société.",
+  }
+  ,
+  {
+    id: 9,
+    image:
+      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (4).jpeg",
+    title: "",
+    category: "Photos",
+    description:
+      "Comment les plateformes numériques transforment notre société.",
+  }
+  ,
+  {
+    id: 10,
+    image:
+      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10.jpeg",
+    title: "",
+    category: "Photos",
+    description:
+      "Comment les plateformes numériques transforment notre société.",
+  },
+  {
+    id: 11,
+    image:
+      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
+    title: "",
+    category: "Photos",
+    description:
+      "Comment les plateformes numériques transforment notre société.",
+  },
+  {
+    id: 12,
+    image:
+      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
+    title: "",
+    category: "Photos",
+    description:
+      "Comment les plateformes numériques transforment notre société.",
+  }
+  ,
+  {
+    id: 13,
+    image:
+      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
+    title: "",
+    category: "Photos",
+    description:
+      "Comment les plateformes numériques transforment notre société.",
+  }
 ];

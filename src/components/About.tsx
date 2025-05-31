@@ -1,4 +1,6 @@
 import React from "react";
+import photoPortrait from "../assets/images/photoPortrait.jpeg"
+import CVNadege from '../assets/CV Professionnel nadege yugain.pdf';
 
 interface AboutProps {
   darkMode: boolean;
@@ -13,8 +15,8 @@ const About: React.FC<AboutProps> = ({ darkMode }) => (
       <div className="flex flex-col md:flex-row items-center gap-10">
         <div className="md:w-1/3 overflow-hidden rounded-lg shadow-xl">
           <img
-            src="https://readdy.ai/api/search-image?query=Professional%20female%20journalist%20with%20notebook%20and%20camera%2C%20business%20casual%20attire%2C%20confident%20pose%2C%20neutral%20background%2C%20high%20quality%20professional%20portrait&width=500&height=600&seq=profile1&orientation=portrait"
-            alt="Nadège Yugain"
+            src= {photoPortrait}
+            alt="photo de Nadège Yugain"
             className="w-full h-auto object-cover object-top transition-transform duration-500 hover:scale-105"
           />
         </div>
@@ -33,7 +35,7 @@ const About: React.FC<AboutProps> = ({ darkMode }) => (
             dignité des personnes concernées.
           </p>
           <a
-            href="/cv-nadege-yugain.pdf"
+            href={CVNadege}
             download="CV_Nadege_Yugain.pdf"
             className={`inline-flex items-center gap-2 px-6 py-3 ${
               darkMode

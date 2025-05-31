@@ -49,10 +49,7 @@ const App: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Votre message a été envoyé !");
-  };
+ 
 
   return (
     <div
@@ -82,7 +79,7 @@ const App: React.FC = () => {
         changeTestimonial={changeTestimonial}
         testimonialContainerRef={testimonialContainerRef}
       />
-      <Contact darkMode={darkMode} handleSubmit={handleSubmit} />
+      <Contact darkMode={darkMode} />
       <Footer darkMode={darkMode} scrollToSection={scrollToSection} />
     </div>
   );

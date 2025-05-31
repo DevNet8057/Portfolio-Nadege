@@ -5,7 +5,7 @@ export const services: Service[] = [
     icon: "fa-newspaper",
     title: "Rédaction d'articles",
     description:
-      "Articles de fond, enquêtes et analyses pour la presse écrite et numérique.",
+      "Vérification rigoureuse des faits pour garantir l'exactitude des informations publiées.",
   },
   {
     icon: "fa-microphone",
@@ -33,7 +33,7 @@ export const services: Service[] = [
   },
   {
     icon: "fa-chalkboard-teacher",
-    title: "Formation",
+    title: "Préparation aux concou",
     description:
       "Ateliers et cours sur les techniques journalistiques et la communication.",
   },
