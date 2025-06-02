@@ -4,11 +4,11 @@ export const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
     image:
-      "https://readdy.ai/api/search-image?query=Dense%20rainforest%20with%20diverse%20flora%20and%20fauna%2C%20sunlight%20filtering%20through%20canopy%2C%20vibrant%20green%20environment%2C%20misty%20atmosphere%2C%20high%20quality%20nature%20photography&width=400&height=300&seq=portfolio1&orientation=landscape",
+      "src/assets/images/Thierry marchand.jpeg",
     title: "La déforestation en Amazonie",
     category: "Articles",
     description:
-      "Une enquête sur les conséquences environnementales et sociales de la déforestation.",
+      "Ambassadeur de France au cameroun reçu par le MINAT",
   },
   {
     id: 2,
@@ -21,8 +21,7 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 3,
-    image:
-      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
+    image: "src/assets/images/Mini-réseaux.jpeg",
     title: "",
     category: "Photos",
     description:
@@ -31,12 +30,12 @@ export const portfolioItems: PortfolioItem[] = [
   {
     id: 4,
     image:
-      "https://readdy.ai/api/search-image?query=Traditional%20food%20market%20with%20local%20vendors%2C%20colorful%20produce%20displays%2C%20bustling%20atmosphere%2C%20authentic%20cultural%20scene%2C%20documentary%20style%20photography&width=400&height=300&seq=portfolio4&orientation=landscape",
+      "src/assets/images/Thierry marchand.jpeg",
     title: "Traditions culinaires en danger",
     category: "Vidéos",
     videoUrl: "/src/assets/Videos/Minat_ Thierry Marchand reçu en audience.mp4", // ou autre URL d'intégration
     description:
-      "Exploration des traditions culinaires menacées par la mondialisation.",
+      "Ambassadeur de France au cameroun reçu par le MINAT",
   },
   {
     id: 5,
@@ -51,41 +50,38 @@ export const portfolioItems: PortfolioItem[] = [
     id: 6,
     image:
       "https://readdy.ai/api/search-image?query=Healthcare%20workers%20in%20hospital%20setting%2C%20medical%20staff%20in%20protective%20equipment%2C%20caring%20for%20patients%2C%20professional%20healthcare%20documentary%20photography&width=400&height=300&seq=portfolio6&orientation=landscape",
-    thumbnail:
-      "/src/assets/images/le savoir faire de la police.png",
-      title: "Système de santé en crise",
+    thumbnail: "/src/assets/images/le savoir faire de la police.png",
+    title: "Système de santé en crise",
     category: "Vidéos",
     videoUrl: "/src/assets/Videos/LE_SAVOIR-FAIRE_DE_LA_POLICE.mp4",
-    
-    description: "Les défis auxquels font face les systèmes de santé modernes.",
+
+    description: "Le savoir faire de la police camerounaise  en vitrine",
   },
   {
     id: 4,
     image:
-      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80", // miniature test
+      "src/assets/images/Mini-réseaux.jpeg", // miniature test
     thumbnail:
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
     title: "Traditions culinaires en danger",
     category: "Vidéos",
-    videoUrl: "/src/assets/Videos/bertoua.mp4",
+    videoUrl: "src/assets/Videos/Mini réseaux.mp4",
     description:
-      "Exploration des traditions culinaires menacées par la mondialisation.",
+      "Le ministre de l'eau et de l'energie sur la validation des mini-réseaux.",
   },
   {
     id: 6,
     image:
       "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", // miniature test
-    thumbnail:
-      "/src/assets/images/parade du 20 mai.png",
+    thumbnail: "/src/assets/images/parade du 20 mai.png",
     title: "Système de santé en crise",
     category: "Vidéos",
     videoUrl: "/src/assets/Videos/parade du 20 Mai.mp4",
-    description: "Les défis auxquels font face les systèmes de santé modernes.",
+    description: "La police peaufine son déploiement",
   },
   {
     id: 7,
-    image:
-      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.09.jpeg",
+    image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.09.jpeg",
     title: "",
     category: "Photos",
     description:
@@ -93,28 +89,23 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 8,
-    image:
-      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (1).jpeg",
+    image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (1).jpeg",
     title: "",
     category: "Photos",
     description:
       "Comment les plateformes numériques transforment notre société.",
-  }
-  ,
+  },
   {
     id: 9,
-    image:
-      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (4).jpeg",
+    image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (4).jpeg",
     title: "",
     category: "Photos",
     description:
       "Comment les plateformes numériques transforment notre société.",
-  }
-  ,
+  },
   {
     id: 10,
-    image:
-      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10.jpeg",
+    image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10.jpeg",
     title: "",
     category: "Photos",
     description:
@@ -122,30 +113,124 @@ export const portfolioItems: PortfolioItem[] = [
   },
   {
     id: 11,
-    image:
-      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
+    image: "src/assets/images/Me Akere muna a infoTv1.jpeg",
+    title: "",
+    category: "Photos",
+    description:
+      "Me Akere muna a infoTv",
+  },
+  {
+    id: 12,
+    image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
     title: "",
     category: "Photos",
     description:
       "Comment les plateformes numériques transforment notre société.",
   },
   {
-    id: 12,
-    image:
-      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
-    title: "",
-    category: "Photos",
-    description:
-      "Comment les plateformes numériques transforment notre société.",
-  }
-  ,
-  {
     id: 13,
-    image:
-      "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
+    image: "src/assets/images/Me Akere muna a infoTv.jpeg",
     title: "",
     category: "Photos",
     description:
-      "Comment les plateformes numériques transforment notre société.",
-  }
+      "Me Akere muna a infoTv",
+  },
+  {
+    id: 14,
+    image: "src/assets/images/Minsate a infoTv.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Le Minsate a émission a vous la parole",
+  },
+  {
+    id: 15,
+    image: "src/assets/images/Locaux de infoTv.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Petite pose photo au travail",
+  },
+  {
+    id: 16,
+    image: "src/assets/images/Elimbi lobe a vous la parole.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Elimbi Lobe a émission vous la parole",
+  },
+  {
+    id: 17,
+    image: "src/assets/images/Mr leo a infoTv.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Mr leo a infoTv",
+  },
+  {
+    id: 18,
+    image: "src/assets/images/Pr.Jean Bahebeck.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Pr.Jean Bahebeck a emission a vous la parole",
+  },
+  {
+    id: 19,
+    image: "src/assets/images/Honorale Cabral Libii.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Honorale Cabral Libii sur le plateau de a vous la parole",
+  },
+  {
+    id: 20,
+    image: "src/assets/images/Honorale Cabral Libii1.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Honorale Cabral Libii sur le plateau de a vous la parole",
+  },
+  {
+    id: 21,
+    image: "src/assets/images/En salle de reunion.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Avec ma collegue en salle de reunion",
+  },
+  {
+    id: 22,
+    image: "src/assets/images/Mincom.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Visite du  MINCOM , René Emmanuel Sadi a infoTv",
+  },
+  {
+    id: 23,
+    image: "src/assets/images/MINFOPRA.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Photo de famille entre le MINFOPRA et le PDG de infoTv ainsi  que certains collaborateurs de la chaine",
+  },
+  {
+    id: 24,
+    image: "src/assets/images/Fete du travail.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Les travailleur de la chaine infoTv le jour de la fête  du travail",
+  },
+  {
+    id: 25,
+    image: "src/assets/images/Josué osih.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Honorable Josué osih a émission a vous la parole",
+  },
+  {
+    id: 26,
+    image: "src/assets/images/terrain.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Sur le terrain avec mon collegue",
+  },
+  {
+    id: 27,
+    image: "src/assets/images/amand claude.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Armand Claude ABANDA, Représentant Résidant IAI-Cameroun sur le plateau a vous la parole",
+  },
 ];
