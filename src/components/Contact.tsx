@@ -91,6 +91,48 @@ const Contact = ({ darkMode }: ContactProps) => {
                 </div>
               </div>
               <div>
+  <label className="block mb-2 font-medium">Comment m'avez-vous connu ?</label>
+  <div className="space-y-2">
+    <label className={`flex items-center ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+      <input 
+        type="radio" 
+        name="contact_source" 
+        value="Réseaux sociaux" 
+        className="mr-2"
+        required
+      />
+      Via les réseaux sociaux
+    </label>
+    <label className={`flex items-center ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+      <input 
+        type="radio" 
+        name="contact_source" 
+        value="Site web" 
+        className="mr-2"
+      />
+      Via mon site web
+    </label>
+    <label className={`flex items-center ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+      <input 
+        type="radio" 
+        name="contact_source" 
+        value="Recommandation" 
+        className="mr-2"
+      />
+      Par recommandation
+    </label>
+    <label className={`flex items-center ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+      <input 
+        type="radio" 
+        name="contact_source" 
+        value="Autre" 
+        className="mr-2"
+      />
+      Autre
+    </label>
+  </div>
+</div>
+              <div>
                 <label htmlFor="subject" className="block mb-2 font-medium">
                   Sujet
                 </label>
@@ -107,6 +149,7 @@ const Contact = ({ darkMode }: ContactProps) => {
                   required
                 />
               </div>
+              
               <div>
                 <label htmlFor="message" className="block mb-2 font-medium">
                   Message
@@ -156,7 +199,7 @@ const Contact = ({ darkMode }: ContactProps) => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Email</h4>
-                    <p>contact@nadegeyugain.com</p>
+                    <p>nadegeyugain10@gmail.com</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -169,7 +212,7 @@ const Contact = ({ darkMode }: ContactProps) => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Téléphone</h4>
-                    <p>+33 6 12 34 56 78</p>
+                    <p>+237 6 99 64 90 23</p>
                   </div>
                 </div>
                 <div className="flex items-start">
@@ -182,7 +225,7 @@ const Contact = ({ darkMode }: ContactProps) => {
                   </div>
                   <div>
                     <h4 className="font-semibold mb-1">Localisation</h4>
-                    <p>Paris, France</p>
+                    <p>Yaoundé, Cameroun</p>
                   </div>
                 </div>
               </div>
@@ -190,7 +233,7 @@ const Contact = ({ darkMode }: ContactProps) => {
                 <h4 className="font-semibold mb-4">Suivez-moi</h4>
                 <div className="flex space-x-4">
                   <a
-                    href="#"
+                    href="https://x.com/Nadegeyugain"
                     className={`w-10 h-10 rounded-full ${
                       darkMode
                         ? "bg-gray-600 hover:bg-blue-600"
@@ -200,7 +243,7 @@ const Contact = ({ darkMode }: ContactProps) => {
                     <i className="fab fa-twitter text-lg"></i>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.linkedin.com/in/nadege-yugain-b901ba352/"
                     className={`w-10 h-10 rounded-full ${
                       darkMode
                         ? "bg-gray-600 hover:bg-blue-600"
@@ -210,17 +253,7 @@ const Contact = ({ darkMode }: ContactProps) => {
                     <i className="fab fa-linkedin-in text-lg"></i>
                   </a>
                   <a
-                    href="#"
-                    className={`w-10 h-10 rounded-full ${
-                      darkMode
-                        ? "bg-gray-600 hover:bg-blue-600"
-                        : "bg-gray-200 hover:bg-blue-500"
-                    } flex items-center justify-center transition-colors cursor-pointer`}
-                  >
-                    <i className="fab fa-instagram text-lg"></i>
-                  </a>
-                  <a
-                    href="#"
+                    href="https://www.youtube.com/@nadegeyugain"
                     className={`w-10 h-10 rounded-full ${
                       darkMode
                         ? "bg-gray-600 hover:bg-blue-600"
