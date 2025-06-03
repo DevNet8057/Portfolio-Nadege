@@ -3,12 +3,10 @@ import type { PortfolioItem } from "../types";
 export const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    image:
-      "src/assets/images/Thierry marchand.jpeg",
+    image: "src/assets/images/Thierry marchand.jpeg",
     title: "La déforestation en Amazonie",
     category: "Articles",
-    description:
-      `🖊️ Faire du journalisme aujourd’hui, c’est tenir debout au milieu du vacarme.
+    description: `🖊️ Faire du journalisme aujourd’hui, c’est tenir debout au milieu du vacarme.
 Réseaux sociaux, fake news, pression des clics, défiance du public…
 Et pourtant, chaque jour, des journalistes tiennent la ligne.
 Voici 9 mantras de savoir-être pour exercer ce métier avec sens et courage :
@@ -79,13 +77,11 @@ hashtag#Journalisme hashtag#Presse hashtag#Média hashtag#Ethique hashtag#Inform
   },
   {
     id: 4,
-    image:
-      "src/assets/images/Thierry marchand.jpeg",
+    image: "src/assets/images/Thierry marchand.jpeg",
     title: "Traditions culinaires en danger",
     category: "Vidéos",
     videoUrl: "/src/assets/Videos/Minat_ Thierry Marchand reçu en audience.mp4", // ou autre URL d'intégration
-    description:
-      "Ambassadeur de France au cameroun reçu par le MINAT",
+    description: "Ambassadeur de France au cameroun reçu par le MINAT",
   },
   {
     id: 5,
@@ -109,8 +105,7 @@ hashtag#Journalisme hashtag#Presse hashtag#Média hashtag#Ethique hashtag#Inform
   },
   {
     id: 4,
-    image:
-      "src/assets/images/Mini-réseaux.jpeg", // miniature test
+    image: "src/assets/images/Mini-réseaux.jpeg", // miniature test
     thumbnail:
       "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80",
     title: "Traditions culinaires en danger",
@@ -166,8 +161,7 @@ hashtag#Journalisme hashtag#Presse hashtag#Média hashtag#Ethique hashtag#Inform
     image: "src/assets/images/Me Akere muna a infoTv1.jpeg",
     title: "",
     category: "Photos",
-    description:
-      "Me Akere muna a infoTv",
+    description: "Me Akere muna a infoTv",
   },
   {
     id: 12,
@@ -182,8 +176,7 @@ hashtag#Journalisme hashtag#Presse hashtag#Média hashtag#Ethique hashtag#Inform
     image: "src/assets/images/Me Akere muna a infoTv.jpeg",
     title: "",
     category: "Photos",
-    description:
-      "Me Akere muna a infoTv",
+    description: "Me Akere muna a infoTv",
   },
   {
     id: 14,
@@ -253,14 +246,16 @@ hashtag#Journalisme hashtag#Presse hashtag#Média hashtag#Ethique hashtag#Inform
     image: "src/assets/images/MINFOPRA.jpeg",
     title: "",
     category: "Photos",
-    description: "Photo de famille entre le MINFOPRA et le PDG de infoTv ainsi  que certains collaborateurs de la chaine",
+    description:
+      "Photo de famille entre le MINFOPRA et le PDG de infoTv ainsi  que certains collaborateurs de la chaine",
   },
   {
     id: 24,
     image: "src/assets/images/Fete du travail.jpeg",
     title: "",
     category: "Photos",
-    description: "Les travailleur de la chaine infoTv le jour de la fête  du travail",
+    description:
+      "Les travailleur de la chaine infoTv le jour de la fête  du travail",
   },
   {
     id: 25,
@@ -281,6 +276,7 @@ hashtag#Journalisme hashtag#Presse hashtag#Média hashtag#Ethique hashtag#Inform
     image: "src/assets/images/amand claude.jpeg",
     title: "",
     category: "Photos",
-    description: "Armand Claude ABANDA, Représentant Résidant IAI-Cameroun sur le plateau a vous la parole",
+    description:
+      "Armand Claude ABANDA, Représentant Résidant IAI-Cameroun sur le plateau a vous la parole",
   },
 ];

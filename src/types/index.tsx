@@ -11,7 +11,10 @@ export interface PortfolioItem {
   image: string;
   title: string;
   category: string;
-  description: string;
+  description?: string;
+  videoUrl?: string;
+  thumbnail?: string;
+  originalIndex?: number;
 }
 
 export interface Service {
