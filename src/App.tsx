@@ -79,7 +79,7 @@ const App: React.FC = () => {
         changeTestimonial={changeTestimonial}
         testimonialContainerRef={testimonialContainerRef}
       />
-      <Contact darkMode={darkMode} />
+      <Contact darkMode={darkMode} services={services} />
       <Footer darkMode={darkMode} scrollToSection={scrollToSection} />
     </div>
   );

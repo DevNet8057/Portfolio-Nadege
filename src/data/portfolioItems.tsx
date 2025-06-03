@@ -8,7 +8,57 @@ export const portfolioItems: PortfolioItem[] = [
     title: "La déforestation en Amazonie",
     category: "Articles",
     description:
-      "Ambassadeur de France au cameroun reçu par le MINAT",
+      `🖊️ Faire du journalisme aujourd’hui, c’est tenir debout au milieu du vacarme.
+Réseaux sociaux, fake news, pression des clics, défiance du public…
+Et pourtant, chaque jour, des journalistes tiennent la ligne.
+Voici 9 mantras de savoir-être pour exercer ce métier avec sens et courage :
+
+1️⃣ L’info n’est pas un produit.
+* Elle est un service public.
+* Même quand on ne travaille pas pour un média public.
+➡️ L’éthique, c’est la boussole, pas l’option.
+
+2️⃣ La rigueur avant la rapidité.
+* Mieux vaut publier une info vérifiée que relayer un scoop erroné.
+➡️ Première ne veut rien dire si on est faux.
+
+3️⃣ L’humilité face aux faits.
+* Ce ne sont pas nos opinions qui comptent.
+* Ce sont les faits, les sources, le terrain.
+➡️ La réalité, pas l’ego.
+
+4️⃣ L’écoute active, même quand on n’est pas d’accord.
+* Un bon journaliste écoute pour comprendre, pas pour réagir.
+➡️ Le désaccord n’est pas l’ennemi du respect.
+
+5️⃣ La bienveillance dans la rédaction.
+* Une bonne équipe, c’est une rédaction qui se soutient.
+➡️ L’info est un sport collectif.
+
+6️⃣ La curiosité comme moteur.
+* Être journaliste, c’est ne jamais cesser de poser des questions.
+➡️ Si on croit tout savoir, on n’apprend plus rien.
+
+7️⃣ La transparence quand on se trompe.
+* Une erreur corrigée n’est pas une faiblesse.
+➡️ C’est une preuve d’intégrité.
+
+8️⃣ Le courage de couvrir ce qui dérange.
+* Être journaliste, c’est aussi déranger.
+➡️ Pas pour provoquer, mais pour éclairer.
+
+9️⃣ La passion, toujours.
+* Ce métier est exigeant, parfois ingrat.
+* Mais il a un sens immense.
+➡️ Informer, c’est servir.
+
+🧭 Le journalisme n’a jamais été facile.
+Mais il n’a jamais été aussi vital.
+
+🎤 Et vous, c’est quoi votre mantra à vous dans ce métier ?
+Partagez-le en commentaire ⬇️
+
+hashtag#Journalisme hashtag#Presse hashtag#Média hashtag#Ethique hashtag#Information`,
   },
   {
     id: 2,

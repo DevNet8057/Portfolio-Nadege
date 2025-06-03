@@ -1,11 +1,13 @@
 import emailjs from "@emailjs/browser";
 import React, { useRef } from "react";
+import type { Service } from "../types";
 
 interface ContactProps {
   darkMode: boolean;
+  services: Service[];
 }
 
-const Contact = ({ darkMode }: ContactProps) => {
+const Contact = ({ darkMode, services }: ContactProps) => {
   const form = useRef<HTMLFormElement>(null);
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
@@ -91,52 +93,26 @@ const Contact = ({ darkMode }: ContactProps) => {
                 </div>
               </div>
               <div>
-  <label className="block mb-2 font-medium">Comment m'avez-vous connu ?</label>
-  <div className="space-y-2">
-    <label className={`flex items-center ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-      <input 
-        type="radio" 
-        name="contact_source" 
-        value="Réseaux sociaux" 
-        className="mr-2"
-        required
-      />
-      Via les réseaux sociaux
-    </label>
-    <label className={`flex items-center ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-      <input 
-        type="radio" 
-        name="contact_source" 
-        value="Site web" 
-        className="mr-2"
-      />
-      Via mon site web
-    </label>
-    <label className={`flex items-center ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-      <input 
-        type="radio" 
-        name="contact_source" 
-        value="Recommandation" 
-        className="mr-2"
-      />
-      Par recommandation
-    </label>
-    <label className={`flex items-center ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
-      <input 
-        type="radio" 
-        name="contact_source" 
-        value="Autre" 
-        className="mr-2"
-      />
-      Autre
-    </label>
-  </div>
-</div>
-              <div>
                 <label htmlFor="subject" className="block mb-2 font-medium">
                   Sujet
                 </label>
-                <input
+                <select
+                  name="subject"
+                  id="subject"
+                  className={`w-full px-4 py-2 rounded-md border ${
+                    darkMode
+                      ? "bg-gray-700 border-gray-600 focus:border-blue-500 text-white"
+                      : "bg-white border-gray-300 focus:border-blue-500"
+                  } focus:outline-none`}
+                  required
+                >
+                  {services.map((service, index) => (
+                    <option key={index} value={service.title}>
+                      {service.title}
+                    </option>
+                  ))}
+                </select>
+                {/* <input
                   type="text"
                   id="subject"
                   name="subject"
@@ -147,9 +123,9 @@ const Contact = ({ darkMode }: ContactProps) => {
                   } focus:outline-none`}
                   placeholder="Sujet de votre message"
                   required
-                />
+                /> */}
               </div>
-              
+
               <div>
                 <label htmlFor="message" className="block mb-2 font-medium">
                   Message
