@@ -158,6 +158,91 @@ const formatText = (text: string): React.JSX.Element[] => {
 interface ExtendedPortfolioItem extends PortfolioItem {
   originalIndex?: number;
 }
+// Interface pour le lazy loading
+interface LazyImageProps {
+  src: string;
+  alt: string;
+  className?: string;
+  style?: React.CSSProperties;
+  onLoad?: () => void;
+}
+
+// Composant LazyImage
+const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, style, onLoad }) => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (imgRef.current) {
+      observer.observe(imgRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={imgRef} className={className} style={style}>
+      {isInView && (
+        <img
+          src={src}
+          alt={alt}
+          className={`transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} w-full h-full object-cover`}
+          onLoad={() => {
+            setIsLoaded(true);
+            onLoad?.();
+          }}
+          loading="lazy"
+        />
+      )}
+      {!isLoaded && isInView && (
+        <div className="w-full h-full bg-gray-200 dark:bg-gray-700 animate-pulse flex items-center justify-center">
+          <div className="text-gray-400">⏳</div>
+        </div>
+      )}
+    </div>
+  );
+};
+// Fonction pour générer une thumbnail à partir d'une URL vidéo
+const generateVideoThumbnail = (videoUrl: string): Promise<string> => {
+  return new Promise((resolve) => {
+    const video = document.createElement('video');
+    video.crossOrigin = 'anonymous';
+    video.currentTime = 1; // Prendre la frame à 1 seconde
+    
+    video.onloadeddata = () => {
+      const canvas = document.createElement('canvas');
+      canvas.width = video.videoWidth || 320;
+      canvas.height = video.videoHeight || 180;
+      
+      const ctx = canvas.getContext('2d');
+      if (ctx) {
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL());
+      } else {
+        // Fallback: image par défaut
+        resolve('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMyMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIiBmaWxsPSIjMzc0MTUxIi8+Cjxwb2x5Z29uIHBvaW50cz0iMTIwLDYwIDE4MCwxMjAgMTIwLDE4MCIgZmlsbD0iI0Y5RkFGQiIvPgo8L3N2Zz4K');
+      }
+    };
+    
+    video.onerror = () => {
+      // Fallback: image par défaut
+      resolve('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMyMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIiBmaWxsPSIjMzc0MTUxIi8+Cjxwb2x5Z29uIHBvaW50cz0iMTIwLDYwIDE4MCwxMjAgMTIwLDE4MCIgZmlsbD0iI0Y5RkFGQiIvPgo8L3N2Zz4K');
+    };
+    
+    video.src = videoUrl;
+  });
+};
 
 const Portfolio: React.FC<PortfolioProps> = ({
   darkMode,
@@ -178,6 +263,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
   const [columnCount, setColumnCount] = useState(3);
   const [displayedItems, setDisplayedItems] = useState(6);
   const [showShareMenu, setShowShareMenu] = useState(false);
+  const [generatedThumbnails, setGeneratedThumbnails] = useState<{[key: string]: string}>({});
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Responsive column count
@@ -411,18 +497,28 @@ const Portfolio: React.FC<PortfolioProps> = ({
                 >
                   {/* Image/Video Container */}
                   <div className="relative">
-                    <img
+                    <LazyImage
                       src={
-                        item.category === "Vidéos" && item.thumbnail
-                          ? item.thumbnail
+                        item.category === "Vidéos" 
+                          ? (item.thumbnail || generatedThumbnails[item.videoUrl || ''] || item.image)
                           : item.image
                       }
                       alt={item.title || "Image portfolio"}
                       className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       style={{
                         height: "auto",
-                        aspectRatio:
-                          item.category === "Photos" ? "auto" : "16/9",
+                        aspectRatio: item.category === "Photos" ? "auto" : "16/9",
+                      }}
+                      onLoad={() => {
+                        // Générer la thumbnail si c'est une vidéo sans thumbnail
+                        if (item.category === "Vidéos" && !item.thumbnail && item.videoUrl && !generatedThumbnails[item.videoUrl]) {
+                          generateVideoThumbnail(item.videoUrl).then(thumbnail => {
+                            setGeneratedThumbnails(prev => ({
+                              ...prev,
+                              [item.videoUrl!]: thumbnail
+                            }));
+                          });
+                        }
                       }}
                     />
 
@@ -528,14 +624,14 @@ const Portfolio: React.FC<PortfolioProps> = ({
         )}
       </div>
 
-      {/* Video Modal */}
+     {/* Video Modal */}
       {videoModal && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
           onClick={handleCloseVideo}
         >
           <div
-            className="relative w-full max-w-4xl max-h-[85vh] flex flex-col"
+            className="relative w-full max-w-6xl max-h-[90vh] flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <button
@@ -545,12 +641,52 @@ const Portfolio: React.FC<PortfolioProps> = ({
             >
               ✕
             </button>
-            <video
-              src={videoModal.url}
-              controls
-              autoPlay
-              className="w-full h-full max-h-[85vh] rounded-lg bg-black object-contain"
-            />
+            
+            <div className="w-full bg-black rounded-lg overflow-hidden" style={{ height: '70vh', minHeight: '500px' }}>
+             {/* Support pour différents types de vidéos */}
+              {videoModal.url.includes('youtube.com') || videoModal.url.includes('youtu.be') ? (
+                <iframe
+                  src={videoModal.url.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/')}
+                  title={videoModal.title}
+                  className="w-full"
+                  style={{ height: '70vh', minHeight: '500px' }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : videoModal.url.includes('vimeo.com') ? (
+                <iframe
+                  src={videoModal.url.replace('vimeo.com/', 'player.vimeo.com/video/')}
+                  title={videoModal.title}
+                  className="w-full"
+                  style={{ height: '70vh', minHeight: '500px' }}
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                />
+              ) : videoModal.url.includes('dailymotion.com') ? (
+                <iframe
+                  src={videoModal.url.replace('dailymotion.com/video/', 'dailymotion.com/embed/video/')}
+                  title={videoModal.title}
+                  className="w-full"
+                  style={{ height: '70vh', minHeight: '500px' }}
+                  allow="autoplay; fullscreen"
+                  allowFullScreen
+                />
+              ) : (
+                <video
+                  src={videoModal.url}
+                  controls
+                  autoPlay
+                  className="w-full object-contain"
+                  style={{ height: '70vh', minHeight: '500px' }}
+                  preload="metadata"
+                />
+              )}
+            </div>
+            
+            {/* Titre de la vidéo */}
+            <div className="mt-4 text-center">
+              <h3 className="text-white text-lg font-semibold">{videoModal.title}</h3>
+            </div>
           </div>
         </div>
       )}
@@ -579,7 +715,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
 
             {/* Header Image - Fixe */}
             <div className="relative h-64 overflow-hidden flex-shrink-0">
-              <img
+              <LazyImage
                 src={articleModal.image}
                 alt={articleModal.title || "Article image"}
                 className="w-full h-full object-cover"
@@ -808,9 +944,9 @@ const Portfolio: React.FC<PortfolioProps> = ({
             </button>
 
             <div className="flex flex-col items-center justify-center w-full h-full">
-              <img
+              <LazyImage
                 src={photoModal.image}
-                alt={photoModal.title}
+                alt={photoModal.title || "Photo"}
                 className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
                 style={{ maxHeight: "calc(90vh - 120px)" }}
               />

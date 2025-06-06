@@ -121,12 +121,12 @@ hashtag#Journalisme hashtag#Presse hashtag#Média hashtag#Ethique hashtag#Inform
     thumbnail: "/src/assets/images/parade du 20 mai.png",
     title: "Système de santé en crise",
     category: "Vidéos",
-    videoUrl: "https://drive.google.com/file/d/1XVRHGLphvKOIzRI0lvftVPy8dMF-lQM_/view?usp=sharing",
+    videoUrl: "https://youtu.be/vUGvmvN2xS0",
     description: "La police peaufine son déploiement",
   },
   {
     id: 7,
-    image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.09.jpeg",
+    image: "https://media.licdn.com/dms/image/v2/D4D22AQGkx12fRGsoCg/feedshare-shrink_2048_1536/B4DZYvF1vtHsAo-/0/1744546790743?e=1752105600&v=beta&t=LfxAdxvV5hHjMci58PdI_F6PHUBIM4BjnjjGs2Wo0cA",
     title: "",
     category: "Photos",
     description:
