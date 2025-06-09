@@ -2,9 +2,10 @@ import type { PortfolioItem } from "../types";
 export const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-<<<<<<< HEAD
-    image: "https://media.licdn.com/dms/image/v2/D4D22AQFaR-o_7lhRdQ/feedshare-shrink_2048_1536/B4DZaiX3jPG8Ao-/0/1746480889224?e=1752105600&v=beta&t=sTzExm86M8REqXVU8sIDIUi3YqYXmg-FrlPcZ2SSnbY",
-    title: "🖊️ Faire du journalisme aujourd’hui, c’est tenir debout au milieu du vacarme.Réseaux sociaux, fake news, pression des clics, défiance du public… Et pourtant, chaque jour, des journalistes tiennent la ligne.",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D22AQFaR-o_7lhRdQ/feedshare-shrink_2048_1536/B4DZaiX3jPG8Ao-/0/1746480889224?e=1752105600&v=beta&t=sTzExm86M8REqXVU8sIDIUi3YqYXmg-FrlPcZ2SSnbY",
+    title:
+      "🖊️ Faire du journalisme aujourd’hui, c’est tenir debout au milieu du vacarme.Réseaux sociaux, fake news, pression des clics, défiance du public… Et pourtant, chaque jour, des journalistes tiennent la ligne.",
     category: "Articles",
     description: `
 Voici 9 mantras de savoir-être pour exercer ce métier avec sens et courage :
@@ -43,23 +44,15 @@ Mais il n’a jamais été aussi vital.
 🎤 Et vous, c’est quoi votre mantra à vous dans ce métier ?
 Partagez-le en commentaire ⬇️
 hashtag#Journalisme hashtag#Presse hashtag#Média hashtag#Ethique hashtag#Information`,
-=======
-    image:
-      "src/assets/images/Thierry marchand.jpeg",
-    title: "La déforestation en Amazonie",
-    category: "Articles",
-    description:
-      "Ambassadeur de France au cameroun reçu par le MINAT",
->>>>>>> origin/main
   },
   {
     id: 2,
     image:
       "https://media.licdn.com/dms/image/v2/D4D12AQGZNKfDHWvRiw/article-cover_image-shrink_720_1280/B4DZZEBZdPHAAI-/0/1744897940776?e=1754524800&v=beta&t=P2Iw9vYhz_3U95uVCGxARVwjqrF8ygaezgYmN-SmUsI",
-    title: "🇬🇦 Gabon : Brice Oligui Nguema élu président avec 90,35 % des voix, après 19 mois de transition militaire",
+    title:
+      "🇬🇦 Gabon : Brice Oligui Nguema élu président avec 90,35 % des voix, après 19 mois de transition militaire",
     category: "Articles",
-    description:
-      `
+    description: `
 Le 12 avril dernier, les Gabonais étaient appelés aux urnes pour élire leur
        président, 19 mois après le coup d’État qui avait renversé Ali Bongo. Sans surprise, Brice Oligui Nguema,
         chef de la transition et ancien commandant de la garde républicaine, a remporté l’élection avec 90,35 % 
@@ -91,32 +84,17 @@ Une attente immense
     image: "src/assets/images/Mini-réseaux.jpeg",
     title: "",
     category: "Photos",
-    description:
-<<<<<<< HEAD
-      "Scéance de travail sur les Mini-réseau ",
-=======
-      "Comment les plateformes numériques transforment notre société.",
+    description: "Scéance de travail sur les Mini-réseau ",
   },
-  {
-    id: 4,
-    image:
-      "src/assets/images/Thierry marchand.jpeg",
-    title: "Traditions culinaires en danger",
-    category: "Vidéos",
-    videoUrl: "/src/assets/Videos/Minat_ Thierry Marchand reçu en audience.mp4", // ou autre URL d'intégration
-    description:
-      "Ambassadeur de France au cameroun reçu par le MINAT",
->>>>>>> origin/main
-  },
- 
+
   {
     id: 5,
     image:
       "https://media.licdn.com/dms/image/v2/D4D12AQEOFyg-XxYO8Q/article-cover_image-shrink_720_1280/B4DZYQnlOIG4AM-/0/1744035536982?e=1754524800&v=beta&t=iS3NZZ3AI41x6vPADCqcEY42ndPqJGeQc7FsKYhh5Jk",
-    title: "🎓 La sous-scolarisation des jeunes filles africaines : Un défi à relever ensemble! 🌍",
+    title:
+      "🎓 La sous-scolarisation des jeunes filles africaines : Un défi à relever ensemble! 🌍",
     category: "Articles",
-    description:
-      `Salut à tous, 
+    description: `Salut à tous, 
 Saviez-vous que près de 34 millions de filles en Afrique ne sont pas scolarisées? 📉 Cet enjeu majeur impacte non seulement leur évolution personnelle, mais aussi le développement économique et social de leurs communautés. Plongeons ensemble dans cette problématique et envisageons des solutions concrètes.
 
 Les Causes
@@ -150,72 +128,47 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
   {
     id: 6,
     image:
-<<<<<<< HEAD
       "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-    thumbnail: "https://media.licdn.com/dms/image/v2/D4D12AQHK5v3v0ZHn9g/article-cover_image-shrink_720_1280/B4DZXHmvA_G4AI-/0/1742810578887?e=1754524800&v=beta&t=71iUNQwSDCGhmP34GbWGwNeVy7LSYg3hMc2SNX3IedM",
-    title: "🎤 Le Ministre de la Santé Publique, Dr Mamaouda Malachi, invité de A Vous la Parole sur InfoTV ! 📺",
+    thumbnail:
+      "https://media.licdn.com/dms/image/v2/D4D12AQHK5v3v0ZHn9g/article-cover_image-shrink_720_1280/B4DZXHmvA_G4AI-/0/1742810578887?e=1754524800&v=beta&t=71iUNQwSDCGhmP34GbWGwNeVy7LSYg3hMc2SNX3IedM",
+    title:
+      "🎤 Le Ministre de la Santé Publique, Dr Mamaouda Malachi, invité de A Vous la Parole sur InfoTV ! 📺",
     category: "Vidéos",
-    videoUrl:"https://youtu.be/bV3N09VPStA",
+    videoUrl: "https://youtu.be/bV3N09VPStA",
 
-    description: "le Ministre de la Santé Publique, invité de l'émission A Vous la Parole , animée par Jean-Jacques Zé et avec l'intervention de Nadège Yugain dans la rubrique Les Questions des Internautes . 🔍",
+    description:
+      "le Ministre de la Santé Publique, invité de l'émission A Vous la Parole , animée par Jean-Jacques Zé et avec l'intervention de Nadège Yugain dans la rubrique Les Questions des Internautes . 🔍",
   },
   {
     id: 30,
-      // miniature test
-=======
-      "https://readdy.ai/api/search-image?query=Healthcare%20workers%20in%20hospital%20setting%2C%20medical%20staff%20in%20protective%20equipment%2C%20caring%20for%20patients%2C%20professional%20healthcare%20documentary%20photography&width=400&height=300&seq=portfolio6&orientation=landscape",
-    thumbnail: "/src/assets/images/le savoir faire de la police.png",
-    title: "Système de santé en crise",
-    category: "Vidéos",
-    videoUrl: "/src/assets/Videos/LE_SAVOIR-FAIRE_DE_LA_POLICE.mp4",
+    // miniature test
 
-    description: "Le savoir faire de la police camerounaise  en vitrine",
-  },
-  {
-    id: 4,
+    thumbnail: "/src/assets/images/Thierry_marchand.jpeg",
     image:
-      "src/assets/images/Mini-réseaux.jpeg", // miniature test
->>>>>>> origin/main
-    thumbnail:
-    "/src/assets/images/Thierry_marchand.jpeg",
-      image:
-    "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
+      "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
     title: "Ambassadeur de France au cameroun reçu par le MINAT.",
     category: "Vidéos",
-<<<<<<< HEAD
+
     videoUrl: "https://youtu.be/wFPV3WT3BPc",
     description:
       "Paul Atanga Nji, ministre de l'administration territoriale reçoit en audience l'ambassadeur de France au Cameroun",
-=======
-    videoUrl: "src/assets/Videos/Mini réseaux.mp4",
-    description:
-      "Le ministre de l'eau et de l'energie sur la validation des mini-réseaux.",
->>>>>>> origin/main
   },
   {
     id: 6,
     image:
       "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", // miniature test
     thumbnail: "/src/assets/images/parade du 20 mai.png",
-<<<<<<< HEAD
     title: "La police peaufine son déploiement",
     category: "Vidéos",
     videoUrl: "https://youtu.be/_iiZgLndb8Q",
-    description: " les éléments de la sûreté nationale font les derniers réglages",
+    description:
+      " les éléments de la sûreté nationale font les derniers réglages",
   },
   {
     id: 7,
-    image: "https://media.licdn.com/dms/image/v2/D4D22AQGkx12fRGsoCg/feedshare-shrink_2048_1536/B4DZYvF1vtHsAo-/0/1744546790743?e=1752105600&v=beta&t=LfxAdxvV5hHjMci58PdI_F6PHUBIM4BjnjjGs2Wo0cA",
-=======
-    title: "Système de santé en crise",
-    category: "Vidéos",
-    videoUrl: "/src/assets/Videos/parade du 20 Mai.mp4",
-    description: "La police peaufine son déploiement",
-  },
-  {
-    id: 7,
-    image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.09.jpeg",
->>>>>>> origin/main
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D22AQGkx12fRGsoCg/feedshare-shrink_2048_1536/B4DZYvF1vtHsAo-/0/1744546790743?e=1752105600&v=beta&t=LfxAdxvV5hHjMci58PdI_F6PHUBIM4BjnjjGs2Wo0cA",
+
     title: "",
     category: "Photos",
     description:
@@ -226,12 +179,7 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
     image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (1).jpeg",
     title: "",
     category: "Photos",
-    description:
-<<<<<<< HEAD
-      "Aux boulot",
-=======
-      "Comment les plateformes numériques transforment notre société.",
->>>>>>> origin/main
+    description: "Aux boulot",
   },
   {
     id: 9,
@@ -239,11 +187,7 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
     title: "",
     category: "Photos",
     description:
-<<<<<<< HEAD
       "Le MINFOPRA invite sur le plateau de  émission a vous la parole",
-=======
-      "Comment les plateformes numériques transforment notre société.",
->>>>>>> origin/main
   },
   {
     id: 10,
@@ -255,7 +199,8 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
   },
   {
     id: 1,
-    image: "https://media.licdn.com/dms/image/v2/D4D22AQFaR-o_7lhRdQ/feedshare-shrink_2048_1536/B4DZaiX3jPG8Ao-/0/1746480889224?e=1752105600&v=beta&t=sTzExm86M8REqXVU8sIDIUi3YqYXmg-FrlPcZ2SSnbY",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D22AQFaR-o_7lhRdQ/feedshare-shrink_2048_1536/B4DZaiX3jPG8Ao-/0/1746480889224?e=1752105600&v=beta&t=sTzExm86M8REqXVU8sIDIUi3YqYXmg-FrlPcZ2SSnbY",
     title: "💼 Faut-il vraiment 'aimer son travail' ?",
     category: "Articles",
     description: `Un soir, je rentrais d’un reportage. Épuisée.
@@ -289,29 +234,17 @@ Qu’est-ce qui vous donne envie de continuer, les jours sans ?`,
   {
     id: 11,
     image: "src/assets/images/Me Akere muna a infoTv1.jpeg",
-<<<<<<< HEAD
-=======
-    title: "",
-    category: "Photos",
-    description:
-      "Me Akere muna a infoTv",
-  },
-  {
-    id: 12,
-    image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
->>>>>>> origin/main
+
     title: "",
     category: "Photos",
     description: "Me Akere Muna dans les locaux infoTv",
   },
   {
-<<<<<<< HEAD
     id: 12,
     image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
     title: "",
     category: "Photos",
-    description:
-      "Photo de famille avec le MINFOPRA",
+    description: "Photo de famille avec le MINFOPRA",
   },
   {
     id: 13,
@@ -322,17 +255,19 @@ Qu’est-ce qui vous donne envie de continuer, les jours sans ?`,
   },
   {
     id: 1,
-    image: "https://media.licdn.com/dms/image/v2/D4D22AQE7MTJqUnDdcA/feedshare-shrink_800/B4DZcHZ_v.GgAk-/0/1748175963096?e=1752105600&v=beta&t=lWX2z3NtsfUMs_xAMLvl7NOWZfZH_5e7Mn1C9HYb2TM",
-    title: "🌸 À toutes ces femmes qui incarnent l'amour, la force et la résilience",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D22AQE7MTJqUnDdcA/feedshare-shrink_800/B4DZcHZ_v.GgAk-/0/1748175963096?e=1752105600&v=beta&t=lWX2z3NtsfUMs_xAMLvl7NOWZfZH_5e7Mn1C9HYb2TM",
+    title:
+      "🌸 À toutes ces femmes qui incarnent l'amour, la force et la résilience",
     category: "Articles",
-    description:`Il y a des souvenirs qui marquent une vie. Je me souviens de ces soirs où, malgré une journée épuisante, ma mère trouvait toujours le temps de m'écouter, de me conseiller, de m'aimer. Elle m'a appris que l'amour inconditionnel, la patience et la persévérance sont les piliers d'une vie épanouie.
+    description: `Il y a des souvenirs qui marquent une vie. Je me souviens de ces soirs où, malgré une journée épuisante, ma mère trouvait toujours le temps de m'écouter, de me conseiller, de m'aimer. Elle m'a appris que l'amour inconditionnel, la patience et la persévérance sont les piliers d'une vie épanouie.
 Aujourd'hui, je rends hommage à ma mère, cette femme exceptionnelle qui m'a guidée avec douceur et fermeté, qui a fait de moi la personne que je suis devenue. Son amour, son éducation et sa joie de vivre sont des trésors que je chéris chaque jour.
 Mais au-delà de ma mère, je souhaite saluer toutes ces femmes qui, chaque jour, jonglent entre leurs responsabilités professionnelles et familiales. Ces héroïnes du quotidien qui, malgré les défis, continuent d'avancer avec courage et détermination pour le bien-être de leur famille.
 Je pense également à nos collègues, supérieures et mentors qui, par leurs conseils avisés et leur bienveillance, jouent un rôle maternel dans notre parcours professionnel. Elles nous encadrent, nous inspirent et nous poussent à donner le meilleur de nous-mêmes.
 En cette Fête des Mères, je vous invite à prendre un moment pour remercier ces femmes qui ont marqué votre vie. Mentionnez-les en commentaire, partagez une anecdote ou simplement un mot de gratitude.
 💬 Qui est cette femme qui vous a inspiré(e) et soutenu(e) comme une mère ? Partagez son nom et votre reconnaissance en commentaire.
 hashtag#FêteDesMères hashtag#HommageAuxFemmes hashtag#Reconnaissance hashtag#Inspiration hashtag#Gratitude
-`
+`,
   },
   {
     id: 14,
@@ -371,8 +306,10 @@ hashtag#FêteDesMères hashtag#HommageAuxFemmes hashtag#Reconnaissance hashtag#I
   },
   {
     id: 1,
-    image: "https://media.licdn.com/dms/image/v2/D4D12AQGpYkniaoaW1g/article-cover_image-shrink_720_1280/B4DZZYX4XLHwAM-/0/1745239381105?e=1754524800&v=beta&t=LEygGuem7G1HgSUJBEXzOfEQUgGwj66h8Jn0kVzhK5s",
-    title: "🎯 Titre : La vaccination pour toutes et tous, c’est humainement possible – Semaine mondiale de la vaccination 2025",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D12AQGpYkniaoaW1g/article-cover_image-shrink_720_1280/B4DZZYX4XLHwAM-/0/1745239381105?e=1754524800&v=beta&t=LEygGuem7G1HgSUJBEXzOfEQUgGwj66h8Jn0kVzhK5s",
+    title:
+      "🎯 Titre : La vaccination pour toutes et tous, c’est humainement possible – Semaine mondiale de la vaccination 2025",
     category: "Articles",
     description: `La Semaine mondiale de la vaccination (24 au 30 avril 2025) est l’occasion de rappeler une vérité simple: les vaccins sauvent des vies. En 50 ans, ils ont permis de sauver au moins 154 millions de vies, soit 6 vies par minute, chaque jour, depuis cinq décennies. Un progrès historique, porté par l’engagement de millions de soignants, scientifiques, familles et institutions.
 Aujourd’hui, ces acquis sont menacés. Il est urgent de redoubler d’efforts pour continuer à protéger les plus vulnérables.
@@ -383,8 +320,8 @@ Semaine de la vaccination dans les Amériques – du 26 avril au 3 mai 2025
 Semaine européenne de la vaccination – du 27 avril au 3 mai 2025
 La vaccination est un droit, un acte de solidarité, et une preuve que l’humanité peut surmonter les plus grands défis sanitaires. Continuons à protéger. Continuons à vacciner.
 👉 À suivre sur les pages de @Organisation mondiale de la Santé (OMS), @World Health Organization (WHO), @Pan American Health Organization et @UNICEF.
-#Vaccination #SemaineMondialeVaccination #SantéPublique #Prévention #OMS #OPS #Unicef #SantéGlobale #VaccinsPourTous #HealthForAll`
-    },
+#Vaccination #SemaineMondialeVaccination #SantéPublique #Prévention #OMS #OPS #Unicef #SantéGlobale #VaccinsPourTous #HealthForAll`,
+  },
   {
     id: 19,
     image: "src/assets/images/Honorale Cabral Libii.jpeg",
@@ -423,8 +360,10 @@ La vaccination est un droit, un acte de solidarité, et une preuve que l’human
   },
   {
     id: 1,
-    image: "https://media.licdn.com/dms/image/v2/D4D12AQG8G3uMc2HcVQ/article-cover_image-shrink_720_1280/B4DZYBZQyZGkAI-/0/1743780125314?e=1754524800&v=beta&t=Jp3a17S0RLXKodD9zi2LDeECaJBnY5COr6a9iMQEYIY",
-    title: "🚨 STOP aux violences sexuelles sur les enfants ! Brisons le silence, agissons MAINTENANT !",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D12AQG8G3uMc2HcVQ/article-cover_image-shrink_720_1280/B4DZYBZQyZGkAI-/0/1743780125314?e=1754524800&v=beta&t=Jp3a17S0RLXKodD9zi2LDeECaJBnY5COr6a9iMQEYIY",
+    title:
+      "🚨 STOP aux violences sexuelles sur les enfants ! Brisons le silence, agissons MAINTENANT !",
     category: "Articles",
     description: `💡 Chiffres alarmants : Selon l’OMS, 1 enfant sur 5 est victime de violences sexuelles avant 18 ans. Dans 90% des cas, l’agresseur est un proche. Ces chiffres sont insupportables – et pourtant, le sujet reste trop souvent tabou.
 ❓ Questions cruciales :
@@ -440,98 +379,16 @@ La vaccination est un droit, un acte de solidarité, et une preuve que l’human
  5️⃣ Briser la culture du silence : Encourageons les témoignages et soutenons les victimes sans jugement.
 🌍 Notre responsabilité collective : Chaque signalement compte. Chaque parole libérée peut sauver un enfant. Si vous êtes témoin ou victime, parlez .
 ✊ Ensemble, disons STOP.
- #ProtectionEnfance #StopAuxViolences #BriserLeSilence #JusticePourLesEnfants #Sensibilisation`
-    },
-=======
-    id: 13,
-    image: "src/assets/images/Me Akere muna a infoTv.jpeg",
-    title: "",
-    category: "Photos",
-    description:
-      "Me Akere muna a infoTv",
+ #ProtectionEnfance #StopAuxViolences #BriserLeSilence #JusticePourLesEnfants #Sensibilisation`,
   },
-  {
-    id: 14,
-    image: "src/assets/images/Minsate a infoTv.jpeg",
-    title: "",
-    category: "Photos",
-    description: "Le Minsate a émission a vous la parole",
-  },
-  {
-    id: 15,
-    image: "src/assets/images/Locaux de infoTv.jpeg",
-    title: "",
-    category: "Photos",
-    description: "Petite pose photo au travail",
-  },
-  {
-    id: 16,
-    image: "src/assets/images/Elimbi lobe a vous la parole.jpeg",
-    title: "",
-    category: "Photos",
-    description: "Elimbi Lobe a émission vous la parole",
-  },
-  {
-    id: 17,
-    image: "src/assets/images/Mr leo a infoTv.jpeg",
-    title: "",
-    category: "Photos",
-    description: "Mr leo a infoTv",
-  },
-  {
-    id: 18,
-    image: "src/assets/images/Pr.Jean Bahebeck.jpeg",
-    title: "",
-    category: "Photos",
-    description: "Pr.Jean Bahebeck a emission a vous la parole",
-  },
-  {
-    id: 19,
-    image: "src/assets/images/Honorale Cabral Libii.jpeg",
-    title: "",
-    category: "Photos",
-    description: "Honorale Cabral Libii sur le plateau de a vous la parole",
-  },
-  {
-    id: 20,
-    image: "src/assets/images/Honorale Cabral Libii1.jpeg",
-    title: "",
-    category: "Photos",
-    description: "Honorale Cabral Libii sur le plateau de a vous la parole",
-  },
-  {
-    id: 21,
-    image: "src/assets/images/En salle de reunion.jpeg",
-    title: "",
-    category: "Photos",
-    description: "Avec ma collegue en salle de reunion",
-  },
-  {
-    id: 22,
-    image: "src/assets/images/Mincom.jpeg",
-    title: "",
-    category: "Photos",
-    description: "Visite du  MINCOM , René Emmanuel Sadi a infoTv",
-  },
-  {
-    id: 23,
-    image: "src/assets/images/MINFOPRA.jpeg",
-    title: "",
-    category: "Photos",
-    description: "Photo de famille entre le MINFOPRA et le PDG de infoTv ainsi  que certains collaborateurs de la chaine",
-  },
->>>>>>> origin/main
+
   {
     id: 24,
     image: "src/assets/images/Fete du travail.jpeg",
     title: "",
     category: "Photos",
-<<<<<<< HEAD
     description:
       "Les travailleur de la chaine infoTv le jour de la fête  du travail",
-=======
-    description: "Les travailleur de la chaine infoTv le jour de la fête  du travail",
->>>>>>> origin/main
   },
   {
     id: 25,
@@ -552,14 +409,16 @@ La vaccination est un droit, un acte de solidarité, et une preuve que l’human
     image: "src/assets/images/amand claude.jpeg",
     title: "",
     category: "Photos",
-<<<<<<< HEAD
+
     description:
       "Armand Claude ABANDA, Représentant Résidant IAI-Cameroun sur le plateau a vous la parole",
   },
   {
     id: 1,
-    image: "https://media.licdn.com/dms/image/v2/D4D22AQFaR-o_7lhRdQ/feedshare-shrink_2048_1536/B4DZaiX3jPG8Ao-/0/1746480889224?e=1752105600&v=beta&t=sTzExm86M8REqXVU8sIDIUi3YqYXmg-FrlPcZ2SSnbY",
-    title: "📰 Les grands journalistes pratiquent l’éthique. Et la bienveillance.",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D22AQFaR-o_7lhRdQ/feedshare-shrink_2048_1536/B4DZaiX3jPG8Ao-/0/1746480889224?e=1752105600&v=beta&t=sTzExm86M8REqXVU8sIDIUi3YqYXmg-FrlPcZ2SSnbY",
+    title:
+      "📰 Les grands journalistes pratiquent l’éthique. Et la bienveillance.",
     category: "Articles",
     description: `Pas pour soigner leur image.
 Pas pour récolter des likes.
@@ -610,11 +469,6 @@ Voici comment les journalistes d’exception cultivent une posture éthique, hum
 Mais il peut aussi être profondément humain.
 🎤 Et vous ? Quelle valeur guide votre travail au quotidien ?
 Commentez, partagez, inspirez ⬇️
-hashtag#Journalisme hashtag#Media hashtag#Ethique hashtag#Rédaction`
-    }
-  
-=======
-    description: "Armand Claude ABANDA, Représentant Résidant IAI-Cameroun sur le plateau a vous la parole",
+hashtag#Journalisme hashtag#Media hashtag#Ethique hashtag#Rédaction`,
   },
->>>>>>> origin/main
 ];

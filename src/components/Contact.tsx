@@ -167,11 +167,6 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                   required
                 /> */}
               </div>
-<<<<<<< HEAD
-
-=======
-              
->>>>>>> origin/main
               <div>
                 <label htmlFor="message" className="block mb-2 font-medium">
                   Message

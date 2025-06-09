@@ -62,45 +62,7 @@ export const services: Service[] = [
     title: "Encadrement Stagiaires",
     description: "Encadrement à distance des stagiaires en journalisme pour les accompagner dans leur formation."
   },
-<<<<<<< HEAD
-=======
-  
-  {
-    icon: "fa-handshake",
-    title: "Collaborations",
-    description: "Disponible pour des collaborations dans les domaines journalistiques et entrepreneuriaux."
-  },
-  {
-    icon: "fa-graduation-cap",
-    title: "Formations",
-    description: "Ouvert à apprendre de nouvelles formations en ligne ou en présentiel dans le journalisme et l'entrepreneuriat."
-  },
-  {
-    icon: "fa-bullhorn",
-    title: "Publicité",
-    description: "Possibilité de rédiger ou prêter ma voix pour vos publicités et promotions via InfoTV et mes réseaux sociaux."
-  },
-  {
-    icon: "fa-network-wired",
-    title: "Réseautage & Mise en relation",
-    description: "Ouvert au réseautage dans les domaines journalistique, entrepreneurial et au-delà."
-  },
-  {
-    icon: "fa-map-marker-alt",
-    title: "Travail à distance ou sur place",
-    description: "Flexible pour travailler à distance ou sur place selon les besoins du projet."
-  },
-  {
-    icon: "fa-calendar-check",
-    title: "Événements & Conférences",
-    description: "Disponible ponctuellement pour participer à des événements, séminaires, webinaires ou galas en ligne ou en présentiel."
-  },
-  {
-    icon: "fa-chalkboard-teacher",
-    title: "Encadrement Stagiaires",
-    description: "Encadrement à distance des stagiaires en journalisme pour les accompagner dans leur formation."
-  },
->>>>>>> origin/main
+
   {
     icon: "fa-microphone-alt",
     title: "Présentation / Co-présentation",
