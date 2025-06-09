@@ -25,18 +25,7 @@ export const services: Service[] = [
     description:
       "Création de contenus audio narratifs et documentaires sonores.",
   },
-  {
-    icon: "fa-edit",
-    title: "Rédaction web",
-    description:
-      "Contenu optimisé pour le web, respectant les normes SEO actuelles.",
-  },
-  {
-    icon: "fa-chalkboard-teacher",
-    title: "Préparation aux concou",
-    description:
-      "Ateliers et cours sur les techniques journalistiques et la communication.",
-  },
+  
   
   {
     icon: "fa-handshake",
