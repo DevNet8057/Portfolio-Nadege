@@ -93,6 +93,48 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                 </div>
               </div>
               <div>
+  <label className="block mb-2 font-medium">Comment m'avez-vous connu ?</label>
+  <div className="space-y-2">
+    <label className={`flex items-center ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+      <input 
+        type="radio" 
+        name="contact_source" 
+        value="Réseaux sociaux" 
+        className="mr-2"
+        required
+      />
+      Via les réseaux sociaux
+    </label>
+    <label className={`flex items-center ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+      <input 
+        type="radio" 
+        name="contact_source" 
+        value="Site web" 
+        className="mr-2"
+      />
+      Via mon site web
+    </label>
+    <label className={`flex items-center ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+      <input 
+        type="radio" 
+        name="contact_source" 
+        value="Recommandation" 
+        className="mr-2"
+      />
+      Par recommandation
+    </label>
+    <label className={`flex items-center ${darkMode ? 'text-gray-300' : 'text-gray-700'}`}>
+      <input 
+        type="radio" 
+        name="contact_source" 
+        value="Autre" 
+        className="mr-2"
+      />
+      Autre
+    </label>
+  </div>
+</div>
+              <div>
                 <label htmlFor="subject" className="block mb-2 font-medium">
                   Sujet
                 </label>
@@ -125,7 +167,6 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                   required
                 /> */}
               </div>
-
               <div>
                 <label htmlFor="message" className="block mb-2 font-medium">
                   Message

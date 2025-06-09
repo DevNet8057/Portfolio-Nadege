@@ -24,11 +24,11 @@ const Hero: React.FC<HeroProps> = ({ darkMode, scrollToSection }) => (
     <div className="container mx-auto px-4 h-full flex  items-center">
       <div className="max-w-2xl">
         <h1 className="text-4xl md:text-5xl font-bold mb-4 ${darkMode ? 'text-white' : 'text-gray-900'}">
-          Journaliste & Rédactrice Professionnelle
+          Journaliste Professionnelle
         </h1>
         <p className="text-xl mb-8">
           Raconter des histoires qui inspirent, informent et transforment.
-          Spécialiste en journalisme d'investigation et reportages de terrain.
+          Spécialiste en reportage et entretien .
         </p>
         <button
           onClick={() => scrollToSection("portfolio")}
