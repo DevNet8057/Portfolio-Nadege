@@ -2,6 +2,7 @@ import type { PortfolioItem } from "../types";
 export const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
+<<<<<<< HEAD
     image: "https://media.licdn.com/dms/image/v2/D4D22AQFaR-o_7lhRdQ/feedshare-shrink_2048_1536/B4DZaiX3jPG8Ao-/0/1746480889224?e=1752105600&v=beta&t=sTzExm86M8REqXVU8sIDIUi3YqYXmg-FrlPcZ2SSnbY",
     title: "🖊️ Faire du journalisme aujourd’hui, c’est tenir debout au milieu du vacarme.Réseaux sociaux, fake news, pression des clics, défiance du public… Et pourtant, chaque jour, des journalistes tiennent la ligne.",
     category: "Articles",
@@ -42,6 +43,14 @@ Mais il n’a jamais été aussi vital.
 🎤 Et vous, c’est quoi votre mantra à vous dans ce métier ?
 Partagez-le en commentaire ⬇️
 hashtag#Journalisme hashtag#Presse hashtag#Média hashtag#Ethique hashtag#Information`,
+=======
+    image:
+      "src/assets/images/Thierry marchand.jpeg",
+    title: "La déforestation en Amazonie",
+    category: "Articles",
+    description:
+      "Ambassadeur de France au cameroun reçu par le MINAT",
+>>>>>>> origin/main
   },
   {
     id: 2,
@@ -83,7 +92,21 @@ Une attente immense
     title: "",
     category: "Photos",
     description:
+<<<<<<< HEAD
       "Scéance de travail sur les Mini-réseau ",
+=======
+      "Comment les plateformes numériques transforment notre société.",
+  },
+  {
+    id: 4,
+    image:
+      "src/assets/images/Thierry marchand.jpeg",
+    title: "Traditions culinaires en danger",
+    category: "Vidéos",
+    videoUrl: "/src/assets/Videos/Minat_ Thierry Marchand reçu en audience.mp4", // ou autre URL d'intégration
+    description:
+      "Ambassadeur de France au cameroun reçu par le MINAT",
+>>>>>>> origin/main
   },
  
   {
@@ -127,6 +150,7 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
   {
     id: 6,
     image:
+<<<<<<< HEAD
       "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
     thumbnail: "https://media.licdn.com/dms/image/v2/D4D12AQHK5v3v0ZHn9g/article-cover_image-shrink_720_1280/B4DZXHmvA_G4AI-/0/1742810578887?e=1754524800&v=beta&t=71iUNQwSDCGhmP34GbWGwNeVy7LSYg3hMc2SNX3IedM",
     title: "🎤 Le Ministre de la Santé Publique, Dr Mamaouda Malachi, invité de A Vous la Parole sur InfoTV ! 📺",
@@ -138,21 +162,42 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
   {
     id: 30,
       // miniature test
+=======
+      "https://readdy.ai/api/search-image?query=Healthcare%20workers%20in%20hospital%20setting%2C%20medical%20staff%20in%20protective%20equipment%2C%20caring%20for%20patients%2C%20professional%20healthcare%20documentary%20photography&width=400&height=300&seq=portfolio6&orientation=landscape",
+    thumbnail: "/src/assets/images/le savoir faire de la police.png",
+    title: "Système de santé en crise",
+    category: "Vidéos",
+    videoUrl: "/src/assets/Videos/LE_SAVOIR-FAIRE_DE_LA_POLICE.mp4",
+
+    description: "Le savoir faire de la police camerounaise  en vitrine",
+  },
+  {
+    id: 4,
+    image:
+      "src/assets/images/Mini-réseaux.jpeg", // miniature test
+>>>>>>> origin/main
     thumbnail:
     "/src/assets/images/Thierry_marchand.jpeg",
       image:
     "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
     title: "Ambassadeur de France au cameroun reçu par le MINAT.",
     category: "Vidéos",
+<<<<<<< HEAD
     videoUrl: "https://youtu.be/wFPV3WT3BPc",
     description:
       "Paul Atanga Nji, ministre de l'administration territoriale reçoit en audience l'ambassadeur de France au Cameroun",
+=======
+    videoUrl: "src/assets/Videos/Mini réseaux.mp4",
+    description:
+      "Le ministre de l'eau et de l'energie sur la validation des mini-réseaux.",
+>>>>>>> origin/main
   },
   {
     id: 6,
     image:
       "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", // miniature test
     thumbnail: "/src/assets/images/parade du 20 mai.png",
+<<<<<<< HEAD
     title: "La police peaufine son déploiement",
     category: "Vidéos",
     videoUrl: "https://youtu.be/_iiZgLndb8Q",
@@ -161,6 +206,16 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
   {
     id: 7,
     image: "https://media.licdn.com/dms/image/v2/D4D22AQGkx12fRGsoCg/feedshare-shrink_2048_1536/B4DZYvF1vtHsAo-/0/1744546790743?e=1752105600&v=beta&t=LfxAdxvV5hHjMci58PdI_F6PHUBIM4BjnjjGs2Wo0cA",
+=======
+    title: "Système de santé en crise",
+    category: "Vidéos",
+    videoUrl: "/src/assets/Videos/parade du 20 Mai.mp4",
+    description: "La police peaufine son déploiement",
+  },
+  {
+    id: 7,
+    image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.09.jpeg",
+>>>>>>> origin/main
     title: "",
     category: "Photos",
     description:
@@ -172,7 +227,11 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
     title: "",
     category: "Photos",
     description:
+<<<<<<< HEAD
       "Aux boulot",
+=======
+      "Comment les plateformes numériques transforment notre société.",
+>>>>>>> origin/main
   },
   {
     id: 9,
@@ -180,7 +239,11 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
     title: "",
     category: "Photos",
     description:
+<<<<<<< HEAD
       "Le MINFOPRA invite sur le plateau de  émission a vous la parole",
+=======
+      "Comment les plateformes numériques transforment notre société.",
+>>>>>>> origin/main
   },
   {
     id: 10,
@@ -226,11 +289,23 @@ Qu’est-ce qui vous donne envie de continuer, les jours sans ?`,
   {
     id: 11,
     image: "src/assets/images/Me Akere muna a infoTv1.jpeg",
+<<<<<<< HEAD
+=======
+    title: "",
+    category: "Photos",
+    description:
+      "Me Akere muna a infoTv",
+  },
+  {
+    id: 12,
+    image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
+>>>>>>> origin/main
     title: "",
     category: "Photos",
     description: "Me Akere Muna dans les locaux infoTv",
   },
   {
+<<<<<<< HEAD
     id: 12,
     image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg",
     title: "",
@@ -367,13 +442,96 @@ La vaccination est un droit, un acte de solidarité, et une preuve que l’human
 ✊ Ensemble, disons STOP.
  #ProtectionEnfance #StopAuxViolences #BriserLeSilence #JusticePourLesEnfants #Sensibilisation`
     },
+=======
+    id: 13,
+    image: "src/assets/images/Me Akere muna a infoTv.jpeg",
+    title: "",
+    category: "Photos",
+    description:
+      "Me Akere muna a infoTv",
+  },
+  {
+    id: 14,
+    image: "src/assets/images/Minsate a infoTv.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Le Minsate a émission a vous la parole",
+  },
+  {
+    id: 15,
+    image: "src/assets/images/Locaux de infoTv.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Petite pose photo au travail",
+  },
+  {
+    id: 16,
+    image: "src/assets/images/Elimbi lobe a vous la parole.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Elimbi Lobe a émission vous la parole",
+  },
+  {
+    id: 17,
+    image: "src/assets/images/Mr leo a infoTv.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Mr leo a infoTv",
+  },
+  {
+    id: 18,
+    image: "src/assets/images/Pr.Jean Bahebeck.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Pr.Jean Bahebeck a emission a vous la parole",
+  },
+  {
+    id: 19,
+    image: "src/assets/images/Honorale Cabral Libii.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Honorale Cabral Libii sur le plateau de a vous la parole",
+  },
+  {
+    id: 20,
+    image: "src/assets/images/Honorale Cabral Libii1.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Honorale Cabral Libii sur le plateau de a vous la parole",
+  },
+  {
+    id: 21,
+    image: "src/assets/images/En salle de reunion.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Avec ma collegue en salle de reunion",
+  },
+  {
+    id: 22,
+    image: "src/assets/images/Mincom.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Visite du  MINCOM , René Emmanuel Sadi a infoTv",
+  },
+  {
+    id: 23,
+    image: "src/assets/images/MINFOPRA.jpeg",
+    title: "",
+    category: "Photos",
+    description: "Photo de famille entre le MINFOPRA et le PDG de infoTv ainsi  que certains collaborateurs de la chaine",
+  },
+>>>>>>> origin/main
   {
     id: 24,
     image: "src/assets/images/Fete du travail.jpeg",
     title: "",
     category: "Photos",
+<<<<<<< HEAD
     description:
       "Les travailleur de la chaine infoTv le jour de la fête  du travail",
+=======
+    description: "Les travailleur de la chaine infoTv le jour de la fête  du travail",
+>>>>>>> origin/main
   },
   {
     id: 25,
@@ -394,6 +552,7 @@ La vaccination est un droit, un acte de solidarité, et une preuve que l’human
     image: "src/assets/images/amand claude.jpeg",
     title: "",
     category: "Photos",
+<<<<<<< HEAD
     description:
       "Armand Claude ABANDA, Représentant Résidant IAI-Cameroun sur le plateau a vous la parole",
   },
@@ -454,4 +613,8 @@ Commentez, partagez, inspirez ⬇️
 hashtag#Journalisme hashtag#Media hashtag#Ethique hashtag#Rédaction`
     }
   
+=======
+    description: "Armand Claude ABANDA, Représentant Résidant IAI-Cameroun sur le plateau a vous la parole",
+  },
+>>>>>>> origin/main
 ];
