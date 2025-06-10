@@ -431,8 +431,14 @@ const Portfolio: React.FC<PortfolioProps> = ({
   return (
     <section
       id="portfolio"
-      className={`py-16 ${darkMode ? "bg-gray-900" : "bg-gray-50"}`}
+    className={`py-16 relative overflow-hidden ${
+  darkMode
+    ? "bg-gradient-to-br from-gray-900 via-gray-750 to-[#252652]"
+    : "bg-gradient-to-br from-gray-50 via-white to-blue-50"
+}`}
+
     >
+      
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2
@@ -460,14 +466,14 @@ const Portfolio: React.FC<PortfolioProps> = ({
                 key={cat}
                 onClick={() => setActivePortfolioFilter(cat)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
-                  activePortfolioFilter === cat
-                    ? darkMode
-                      ? "bg-blue-600 text-white shadow-lg shadow-blue-600/25"
-                      : "bg-blue-500 text-white shadow-lg shadow-blue-500/25"
-                    : darkMode
-                    ? "bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-700"
-                    : "bg-white text-gray-700 hover:bg-gray-100 border border-gray-200 shadow-sm"
-                } whitespace-nowrap cursor-pointer`}
+  activePortfolioFilter === cat
+    ? darkMode
+      ? "bg-gradient-to-r from-purple-800 to-blue-600 hover:from-purple-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl"
+      : "bg-gradient-to-r from-purple-800 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl"
+    : darkMode
+    ? "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-500 hover:to-gray-600 text-white shadow-lg hover:shadow-xl"
+    : "bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-700 shadow-lg hover:shadow-xl"
+} whitespace-nowrap cursor-pointer`}
               >
                 {cat}
               </button>
@@ -932,9 +938,9 @@ const Portfolio: React.FC<PortfolioProps> = ({
           onClick={handleClosePhoto}
         >
           <div
-            className="relative w-full h-full max-w-6xl max-h-[90vh] flex flex-col items-center justify-center"
-            onClick={(e) => e.stopPropagation()}
-          >
+  className="relative max-w-6xl max-h-[90vh] flex flex-col items-center justify-center"
+  onClick={(e) => e.stopPropagation()}
+>
             <button
               className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full w-8 h-8 flex items-center justify-center"
               onClick={handleClosePhoto}

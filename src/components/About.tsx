@@ -8,9 +8,7 @@ interface AboutProps {
 
 const About: React.FC<AboutProps> = ({ darkMode }) => (
   <section
-    id="about"
-    className={`py-16 ${darkMode ? "bg-gray-800" : "bg-gray-50"}`}
-  >
+    id="about"className={`py-16 ${darkMode ? "bg-gray-800" : "bg-gray-50"}`}>
     <div className="container mx-auto px-4">
       <div className="flex flex-col md:flex-row items-center gap-10">
         <div className="md:w-1/3 overflow-hidden rounded-lg shadow-xl">
@@ -27,7 +25,6 @@ const About: React.FC<AboutProps> = ({ darkMode }) => (
           </p>
           <p className="text-lg mb-6">
           Ma démarche journalistique repose sur la rigueur, l'éthique et l'empathie. Formée au BTS en Journalisme à l'Institut Universitaire Siantou, j'ai débuté ma carrière en coordonnant les éditions de journaux à Radio-Siantou, avant de collaborer avec des structures telles que Canal2 International et Radio-Royal TV. Mes compétences englobent la rédaction et l'édition, la conduite d'interviews, la réalisation de reportages de terrain, la vérification des faits, ainsi que la présentation et la réalisation de journaux. Chaque histoire est pour moi une opportunité de donner une voix à ceux qui n'en ont pas, en la racontant avec précision et sensibilité.
-           
           </p>
           <p className="text-lg mb-6">En parallèle de mon activité journalistique, je m'intéresse vivement à l'entrepreneuriat et au développement personnel. Bien que je n'aie pas encore eu l'occasion de participer activement à des événements de formation, de réseautage ou de collaboration, je suis ouverte à toute opportunité en ce sens. Je considère chaque interaction comme une chance d'apprentissage, convaincue que les échanges et les conseils sont essentiels pour progresser et enrichir ma pratique professionnelle.
 
@@ -37,11 +34,11 @@ const About: React.FC<AboutProps> = ({ darkMode }) => (
           <a
             href={CVNadege}
             download="CV_Nadege_Yugain.pdf"
-            className={`inline-flex items-center gap-2 px-6 py-3 ${
-              darkMode
-                ? "bg-blue-600 hover:bg-blue-700"
-                : "bg-blue-500 hover:bg-blue-600"
-            } text-white rounded-md transition-colors shadow-lg`}
+            className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
+  darkMode
+    ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white shadow-lg hover:shadow-xl"
+    : "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white shadow-lg hover:shadow-xl"
+}`}
           >
             <i className="fas fa-download"></i>
             Télécharger mon CV
