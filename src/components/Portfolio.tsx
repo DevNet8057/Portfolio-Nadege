@@ -87,14 +87,18 @@ const formatText = (text: string): React.JSX.Element[] => {
       regex: /\n\n/g,
       component: () => <br key={keyIndex++} className="block my-4" />,
     },
-    { 
-      regex: /\n/g, 
-      component: () => <br key={keyIndex++} /> 
+    {
+      regex: /\n/g,
+      component: () => <br key={keyIndex++} />,
     },
   ];
 
   const processedText = text;
-  const replacements: { start: number; end: number; component: React.JSX.Element }[] = [];
+  const replacements: {
+    start: number;
+    end: number;
+    component: React.JSX.Element;
+  }[] = [];
 
   // Traiter chaque pattern
   patterns.forEach((pattern) => {
@@ -106,7 +110,7 @@ const formatText = (text: string): React.JSX.Element[] => {
       const groups = match.slice(1);
 
       let component: React.JSX.Element;
-      
+
       // Gestion spéciale pour les liens [text](url)
       if (pattern.regex.source.includes("\\[.*?\\]\\(.*?\\)")) {
         component = pattern.component(groups[0] || "", groups[1] || "");
@@ -168,7 +172,13 @@ interface LazyImageProps {
 }
 
 // Composant LazyImage
-const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, style, onLoad }) => {
+const LazyImage: React.FC<LazyImageProps> = ({
+  src,
+  alt,
+  className,
+  style,
+  onLoad,
+}) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [isInView, setIsInView] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
@@ -197,7 +207,9 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, style, onLoa
         <img
           src={src}
           alt={alt}
-          className={`transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'} w-full h-full object-cover`}
+          className={`transition-opacity duration-300 ${
+            isLoaded ? "opacity-100" : "opacity-0"
+          } w-full h-full object-cover`}
           onLoad={() => {
             setIsLoaded(true);
             onLoad?.();
@@ -216,30 +228,34 @@ const LazyImage: React.FC<LazyImageProps> = ({ src, alt, className, style, onLoa
 // Fonction pour générer une thumbnail à partir d'une URL vidéo
 const generateVideoThumbnail = (videoUrl: string): Promise<string> => {
   return new Promise((resolve) => {
-    const video = document.createElement('video');
-    video.crossOrigin = 'anonymous';
+    const video = document.createElement("video");
+    video.crossOrigin = "anonymous";
     video.currentTime = 1; // Prendre la frame à 1 seconde
-    
+
     video.onloadeddata = () => {
-      const canvas = document.createElement('canvas');
+      const canvas = document.createElement("canvas");
       canvas.width = video.videoWidth || 320;
       canvas.height = video.videoHeight || 180;
-      
-      const ctx = canvas.getContext('2d');
+
+      const ctx = canvas.getContext("2d");
       if (ctx) {
         ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
         resolve(canvas.toDataURL());
       } else {
         // Fallback: image par défaut
-        resolve('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMyMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIiBmaWxsPSIjMzc0MTUxIi8+Cjxwb2x5Z29uIHBvaW50cz0iMTIwLDYwIDE4MCwxMjAgMTIwLDE4MCIgZmlsbD0iI0Y5RkFGQiIvPgo8L3N2Zz4K');
+        resolve(
+          "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMyMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIiBmaWxsPSIjMzc0MTUxIi8+Cjxwb2x5Z29uIHBvaW50cz0iMTIwLDYwIDE4MCwxMjAgMTIwLDE4MCIgZmlsbD0iI0Y5RkFGQiIvPgo8L3N2Zz4K"
+        );
       }
     };
-    
+
     video.onerror = () => {
       // Fallback: image par défaut
-      resolve('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMyMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIiBmaWxsPSIjMzc0MTUxIi8+Cjxwb2x5Z29uIHBvaW50cz0iMTIwLDYwIDE4MCwxMjAgMTIwLDE4MCIgZmlsbD0iI0Y5RkFGQiIvPgo8L3N2Zz4K');
+      resolve(
+        "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMyMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIiBmaWxsPSIjMzc0MTUxIi8+Cjxwb2x5Z29uIHBvaW50cz0iMTIwLDYwIDE4MCwxMjAgMTIwLDE4MCIgZmlsbD0iI0Y5RkFGQiIvPgo8L3N2Zz4K"
+      );
     };
-    
+
     video.src = videoUrl;
   });
 };
@@ -263,7 +279,9 @@ const Portfolio: React.FC<PortfolioProps> = ({
   const [columnCount, setColumnCount] = useState(3);
   const [displayedItems, setDisplayedItems] = useState(6);
   const [showShareMenu, setShowShareMenu] = useState(false);
-  const [generatedThumbnails, setGeneratedThumbnails] = useState<{[key: string]: string}>({});
+  const [generatedThumbnails, setGeneratedThumbnails] = useState<{
+    [key: string]: string;
+  }>({});
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Responsive column count
@@ -271,10 +289,15 @@ const Portfolio: React.FC<PortfolioProps> = ({
     const updateColumnCount = () => {
       if (containerRef.current) {
         const width = containerRef.current.offsetWidth;
-        if (width < 640) setColumnCount(2);
-        else if (width < 1024) setColumnCount(3);
-        else if (width < 1280) setColumnCount(4);
-        else setColumnCount(5);
+        // Minimum 2 colonnes même sur mobile comme Pinterest
+        if (width < 480) setColumnCount(2); // Très petit mobile: 2 colonnes
+        else if (width < 640) setColumnCount(2); // Mobile: 2 colonnes
+        else if (width < 768)
+          setColumnCount(3); // Tablette portrait: 3 colonnes
+        else if (width < 1024)
+          setColumnCount(4); // Tablette paysage: 4 colonnes
+        else if (width < 1280) setColumnCount(5); // Desktop: 5 colonnes
+        else setColumnCount(6); // Grand écran: 6 colonnes
       }
     };
 
@@ -295,10 +318,55 @@ const Portfolio: React.FC<PortfolioProps> = ({
       const minHeightIndex = columnHeights.indexOf(Math.min(...columnHeights));
       columns[minHeightIndex].push({ ...item, originalIndex: index });
 
-      let estimatedHeight = 200;
-      if (item.category === "Articles") estimatedHeight += 100;
-      if (item.description && item.description.length > 100)
-        estimatedHeight += 50;
+      // Calcul intelligent de la hauteur basé sur le contenu réel
+      let estimatedHeight = 0;
+
+      // Hauteur de l'image (responsive)
+      const imageHeight =
+        columnCount <= 2
+          ? 160
+          : columnCount <= 3
+          ? 180
+          : columnCount <= 4
+          ? 200
+          : 220;
+      estimatedHeight += imageHeight;
+
+      // Hauteur du contenu (padding + badge + titre + description + bouton)
+      let contentHeight = columnCount <= 2 ? 80 : 100; // Base padding + badge
+
+      // Calcul pour le titre
+      if (item.title) {
+        const titleCharPerLine =
+          columnCount <= 2 ? 25 : columnCount <= 3 ? 30 : 35;
+        const titleLines = Math.min(
+          Math.ceil(item.title.length / titleCharPerLine),
+          item.category === "Articles" ? 3 : 2
+        );
+        contentHeight += titleLines * (columnCount <= 2 ? 18 : 20) + 12;
+      }
+
+      // Calcul pour la description
+      if (item.description) {
+        const descCharPerLine =
+          columnCount <= 2 ? 35 : columnCount <= 3 ? 40 : 45;
+        const maxDescLines = item.category === "Articles" ? 4 : 3;
+        const descLines = Math.min(
+          Math.ceil(item.description.length / descCharPerLine),
+          maxDescLines
+        );
+        contentHeight += descLines * (columnCount <= 2 ? 14 : 16) + 16;
+      }
+
+      // Hauteur du bouton pour les articles
+      if (item.category === "Articles") {
+        contentHeight += columnCount <= 2 ? 45 : 50;
+      }
+
+      estimatedHeight += contentHeight;
+
+      // Ajout d'un gap entre les cartes
+      estimatedHeight += columnCount <= 2 ? 4 : columnCount <= 4 ? 8 : 12;
 
       columnHeights[minHeightIndex] += estimatedHeight;
     });
@@ -431,14 +499,12 @@ const Portfolio: React.FC<PortfolioProps> = ({
   return (
     <section
       id="portfolio"
-    className={`py-16 relative overflow-hidden ${
-  darkMode
-    ? "bg-gradient-to-br from-gray-900 via-gray-750 to-[#252652]"
-    : "bg-gradient-to-br from-gray-50 via-white to-blue-50"
-}`}
-
+      className={`py-16 relative overflow-hidden ${
+        darkMode
+          ? "bg-gradient-to-br from-gray-900 via-gray-750 to-[#252652]"
+          : "bg-gradient-to-br from-gray-50 via-white to-blue-50"
+      }`}
     >
-      
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2
@@ -466,14 +532,14 @@ const Portfolio: React.FC<PortfolioProps> = ({
                 key={cat}
                 onClick={() => setActivePortfolioFilter(cat)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
-  activePortfolioFilter === cat
-    ? darkMode
-      ? "bg-gradient-to-r from-purple-800 to-blue-600 hover:from-purple-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl"
-      : "bg-gradient-to-r from-purple-800 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl"
-    : darkMode
-    ? "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-500 hover:to-gray-600 text-white shadow-lg hover:shadow-xl"
-    : "bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-700 shadow-lg hover:shadow-xl"
-} whitespace-nowrap cursor-pointer`}
+                  activePortfolioFilter === cat
+                    ? darkMode
+                      ? "bg-gradient-to-r from-purple-800 to-blue-600 hover:from-purple-800 hover:to-blue-500 text-white shadow-lg hover:shadow-xl"
+                      : "bg-gradient-to-r from-purple-800 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white shadow-lg hover:shadow-xl"
+                    : darkMode
+                    ? "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-500 hover:to-gray-600 text-white shadow-lg hover:shadow-xl"
+                    : "bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-700 shadow-lg hover:shadow-xl"
+                } whitespace-nowrap cursor-pointer`}
               >
                 {cat}
               </button>
@@ -484,17 +550,26 @@ const Portfolio: React.FC<PortfolioProps> = ({
         {/* Pinterest-style Masonry Grid */}
         <div
           ref={containerRef}
-          className="flex gap-2 justify-center"
-          style={{ columnCount: columnCount }}
+          className="flex gap-1 sm:gap-2 md:gap-3 lg:gap-4 justify-center px-1 sm:px-2"
         >
           {columns.map((column, columnIndex) => (
-            <div key={columnIndex} className="flex flex-col gap-2 w-full">
+            <div
+              key={columnIndex}
+              className="flex flex-col gap-1 sm:gap-2 md:gap-3 lg:gap-4"
+              style={{
+                width: `calc(${100 / columnCount}% - ${
+                  (columnCount - 1) *
+                  (columnCount <= 2 ? 4 : columnCount <= 4 ? 8 : 12)
+                }px / ${columnCount})`,
+                minWidth: columnCount <= 2 ? "150px" : "180px",
+              }}
+            >
               {column.map((item, itemIndex) => (
                 <div
                   key={`${columnIndex}-${itemIndex}`}
-                  className={`group relative overflow-hidden rounded-xl cursor-pointer transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl ${
+                  className={`group relative overflow-hidden rounded-lg sm:rounded-xl cursor-pointer transition-all duration-300 transform hover:scale-[1.02] hover:shadow-xl ${
                     darkMode ? "bg-gray-800 shadow-lg" : "bg-white shadow-md"
-                  }`}
+                  } w-full`}
                   onMouseEnter={() =>
                     setHoveredItem(item.originalIndex ?? null)
                   }
@@ -505,25 +580,35 @@ const Portfolio: React.FC<PortfolioProps> = ({
                   <div className="relative">
                     <LazyImage
                       src={
-                        item.category === "Vidéos" 
-                          ? (item.thumbnail || generatedThumbnails[item.videoUrl || ''] || item.image)
+                        item.category === "Vidéos"
+                          ? item.thumbnail ||
+                            generatedThumbnails[item.videoUrl || ""] ||
+                            item.image
                           : item.image
                       }
                       alt={item.title || "Image portfolio"}
                       className="w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       style={{
                         height: "auto",
-                        aspectRatio: item.category === "Photos" ? "auto" : "16/9",
+                        aspectRatio:
+                          item.category === "Photos" ? "auto" : "16/9",
                       }}
                       onLoad={() => {
                         // Générer la thumbnail si c'est une vidéo sans thumbnail
-                        if (item.category === "Vidéos" && !item.thumbnail && item.videoUrl && !generatedThumbnails[item.videoUrl]) {
-                          generateVideoThumbnail(item.videoUrl).then(thumbnail => {
-                            setGeneratedThumbnails(prev => ({
-                              ...prev,
-                              [item.videoUrl!]: thumbnail
-                            }));
-                          });
+                        if (
+                          item.category === "Vidéos" &&
+                          !item.thumbnail &&
+                          item.videoUrl &&
+                          !generatedThumbnails[item.videoUrl]
+                        ) {
+                          generateVideoThumbnail(item.videoUrl).then(
+                            (thumbnail) => {
+                              setGeneratedThumbnails((prev) => ({
+                                ...prev,
+                                [item.videoUrl!]: thumbnail,
+                              }));
+                            }
+                          );
                         }
                       }}
                     />
@@ -552,7 +637,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
                   </div>
 
                   {/* Content */}
-                  <div className="p-3">
+                  <div className="p-2 sm:p-3 md:p-4">
                     {/* Category Badge */}
                     <span
                       className={`inline-block px-2 py-1 rounded-full text-xs font-medium mb-2 ${
@@ -568,9 +653,15 @@ const Portfolio: React.FC<PortfolioProps> = ({
 
                     {item.title && (
                       <h3
-                        className={`text-sm font-bold mb-2 line-clamp-2 ${
+                        className={`text-xs sm:text-sm md:text-base font-bold mb-2 leading-tight ${
                           darkMode ? "text-white" : "text-gray-800"
                         }`}
+                        style={{
+                          display: "-webkit-box",
+                          WebkitLineClamp: item.category === "Articles" ? 3 : 2,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }}
                       >
                         {item.title}
                       </h3>
@@ -578,9 +669,15 @@ const Portfolio: React.FC<PortfolioProps> = ({
 
                     {item.description && (
                       <p
-                        className={`text-xs mb-3 line-clamp-2 ${
+                        className={`text-xs sm:text-sm mb-3 leading-relaxed ${
                           darkMode ? "text-gray-300" : "text-gray-600"
                         }`}
+                        style={{
+                          display: "-webkit-box",
+                          WebkitLineClamp: item.category === "Articles" ? 4 : 3,
+                          WebkitBoxOrient: "vertical",
+                          overflow: "hidden",
+                        }}
                       >
                         {item.description}
                       </p>
@@ -630,7 +727,7 @@ const Portfolio: React.FC<PortfolioProps> = ({
         )}
       </div>
 
-     {/* Video Modal */}
+      {/* Video Modal */}
       {videoModal && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
@@ -647,33 +744,45 @@ const Portfolio: React.FC<PortfolioProps> = ({
             >
               ✕
             </button>
-            
-            <div className="w-full bg-black rounded-lg overflow-hidden" style={{ height: '70vh', minHeight: '500px' }}>
-             {/* Support pour différents types de vidéos */}
-              {videoModal.url.includes('youtube.com') || videoModal.url.includes('youtu.be') ? (
+
+            <div
+              className="w-full bg-black rounded-lg overflow-hidden"
+              style={{ height: "70vh", minHeight: "500px" }}
+            >
+              {/* Support pour différents types de vidéos */}
+              {videoModal.url.includes("youtube.com") ||
+              videoModal.url.includes("youtu.be") ? (
                 <iframe
-                  src={videoModal.url.replace('watch?v=', 'embed/').replace('youtu.be/', 'youtube.com/embed/')}
+                  src={videoModal.url
+                    .replace("watch?v=", "embed/")
+                    .replace("youtu.be/", "youtube.com/embed/")}
                   title={videoModal.title}
                   className="w-full"
-                  style={{ height: '70vh', minHeight: '500px' }}
+                  style={{ height: "70vh", minHeight: "500px" }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 />
-              ) : videoModal.url.includes('vimeo.com') ? (
+              ) : videoModal.url.includes("vimeo.com") ? (
                 <iframe
-                  src={videoModal.url.replace('vimeo.com/', 'player.vimeo.com/video/')}
+                  src={videoModal.url.replace(
+                    "vimeo.com/",
+                    "player.vimeo.com/video/"
+                  )}
                   title={videoModal.title}
                   className="w-full"
-                  style={{ height: '70vh', minHeight: '500px' }}
+                  style={{ height: "70vh", minHeight: "500px" }}
                   allow="autoplay; fullscreen; picture-in-picture"
                   allowFullScreen
                 />
-              ) : videoModal.url.includes('dailymotion.com') ? (
+              ) : videoModal.url.includes("dailymotion.com") ? (
                 <iframe
-                  src={videoModal.url.replace('dailymotion.com/video/', 'dailymotion.com/embed/video/')}
+                  src={videoModal.url.replace(
+                    "dailymotion.com/video/",
+                    "dailymotion.com/embed/video/"
+                  )}
                   title={videoModal.title}
                   className="w-full"
-                  style={{ height: '70vh', minHeight: '500px' }}
+                  style={{ height: "70vh", minHeight: "500px" }}
                   allow="autoplay; fullscreen"
                   allowFullScreen
                 />
@@ -683,15 +792,17 @@ const Portfolio: React.FC<PortfolioProps> = ({
                   controls
                   autoPlay
                   className="w-full object-contain"
-                  style={{ height: '70vh', minHeight: '500px' }}
+                  style={{ height: "70vh", minHeight: "500px" }}
                   preload="metadata"
                 />
               )}
             </div>
-            
+
             {/* Titre de la vidéo */}
             <div className="mt-4 text-center">
-              <h3 className="text-white text-lg font-semibold">{videoModal.title}</h3>
+              <h3 className="text-white text-lg font-semibold">
+                {videoModal.title}
+              </h3>
             </div>
           </div>
         </div>
@@ -938,9 +1049,9 @@ const Portfolio: React.FC<PortfolioProps> = ({
           onClick={handleClosePhoto}
         >
           <div
-  className="relative max-w-6xl max-h-[90vh] flex flex-col items-center justify-center"
-  onClick={(e) => e.stopPropagation()}
->
+            className="relative max-w-6xl max-h-[90vh] flex flex-col items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               className="absolute top-4 right-4 text-white text-2xl hover:text-gray-300 transition-colors z-10 bg-black/50 rounded-full w-8 h-8 flex items-center justify-center"
               onClick={handleClosePhoto}
