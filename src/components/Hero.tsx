@@ -83,7 +83,8 @@ const Hero: React.FC<HeroProps> = ({ darkMode, scrollToSection }) => {
       }}
     >
       <div className="container mx-auto px-4 h-full flex items-center">
-        <div className="max-w-2xl">
+        {/* Contenu principal avec marge à droite pour éviter les liens sociaux */}
+        <div className="max-w-2xl pr-4 lg:pr-20 xl:pr-24">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
             Journaliste Professionnelle
           </h1>
@@ -104,8 +105,8 @@ const Hero: React.FC<HeroProps> = ({ darkMode, scrollToSection }) => {
         </div>
       </div>
 
-      {/* Social Media Links */}
-      <div className="absolute bottom-8 right-8 flex flex-col gap-4">
+      {/* Social Media Links - Responsive positioning */}
+      <div className="absolute bottom-8 right-4 sm:right-6 md:right-8 flex flex-col gap-3 sm:gap-4">
         {socialLinks.map((social) => (
           <a
             key={social.name}
@@ -113,7 +114,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode, scrollToSection }) => {
             target="_blank"
             rel="noopener noreferrer"
             className={`
-              p-3 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-110
+              p-2 sm:p-3 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-110
               ${darkMode 
                 ? "bg-white/10 text-white hover:bg-white/20" 
                 : "bg-black/20 text-white hover:bg-black/30"
@@ -122,7 +123,34 @@ const Hero: React.FC<HeroProps> = ({ darkMode, scrollToSection }) => {
             `}
             aria-label={`Suivez-moi sur ${social.name}`}
           >
-            {social.icon}
+            <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+              {social.icon}
+            </div>
+          </a>
+        ))}
+      </div>
+
+      {/* Version mobile alternative - liens en bas centré sur très petits écrans */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-row gap-3 sm:hidden">
+        {socialLinks.map((social) => (
+          <a
+            key={social.name}
+            href={social.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`
+              p-2 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-110
+              ${darkMode 
+                ? "bg-white/10 text-white hover:bg-white/20" 
+                : "bg-black/20 text-white hover:bg-black/30"
+              }
+              ${social.color}
+            `}
+            aria-label={`Suivez-moi sur ${social.name}`}
+          >
+            <div className="w-4 h-4">
+              {social.icon}
+            </div>
           </a>
         ))}
       </div>
