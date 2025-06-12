@@ -154,7 +154,7 @@ export default function TestimonialsCarousel({
           {/* Bouton gauche */}
           <button
             onClick={goToPrevious}
-            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-1 ${
+            className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 md:w-12 md:h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-x-1 ${
               darkMode
                 ? "bg-gray-800/90 hover:bg-gray-700/95 text-gray-300 hover:text-white border border-gray-700/50 hover:border-gray-600"
                 : "bg-white/95 hover:bg-white border border-gray-200/50 hover:border-gray-300 text-gray-700 hover:text-gray-900"
@@ -179,7 +179,7 @@ export default function TestimonialsCarousel({
           {/* Bouton droite */}
           <button
             onClick={goToNext}
-            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-x-1 ${
+            className={`absolute right-0 top-1/2 -translate-y-1/2 z-10  w-8 h-8 md:w-12 md:h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-x-1 ${
               darkMode
                 ? "bg-gray-800/90 hover:bg-gray-700/95 text-gray-300 hover:text-white border border-gray-700/50 hover:border-gray-600"
                 : "bg-white/95 hover:bg-white border border-gray-200/50 hover:border-gray-300 text-gray-700 hover:text-gray-900"
@@ -203,18 +203,18 @@ export default function TestimonialsCarousel({
 
           <Carousel
             setApi={setApi}
-            className="w-full px-16"
+            className="w-full px-10 md:px-14"
             opts={{
               align: "start",
               loop: true,
               skipSnaps: false,
             }}
           >
-            <CarouselContent className="-ml-2 md:-ml-4">
+            <CarouselContent className="-ml-4 md:-ml-4 -mr-4 md:-mr-4">
               {testimonialsData.map((testimonial, index) => (
                 <CarouselItem
                   key={index}
-                  className="pl-2 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
+                  className="pl-1 md:pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
                 >
                   <Card
                     className={`transition-all duration-300 ease-out hover:shadow-xl group cursor-pointer
@@ -223,9 +223,9 @@ export default function TestimonialsCarousel({
                         ? "bg-gray-800/80 border-gray-700/50 hover:bg-gray-800/95 hover:border-gray-600/80 hover:shadow-gray-900/30"
                         : "bg-white/90 backdrop-blur-sm border-gray-200/40 shadow-lg hover:bg-white hover:border-gray-300/60 hover:shadow-slate-400/15"
                     }
-                    hover:-translate-y-1 h-80`}
+                    hover:-translate-y-1 h-70`}
                   >
-                    <CardContent className="p-6 h-full flex flex-col relative overflow-hidden">
+                    <CardContent className="p-6 py-1 h-full flex flex-col relative overflow-hidden">
                       {/* Effet de lueur subtile au hover */}
                       <div
                         className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-lg
@@ -239,7 +239,7 @@ export default function TestimonialsCarousel({
                       {/* Contenu avec z-index pour rester au-dessus des effets */}
                       <div className="relative z-10 h-full flex flex-col">
                         {/* Étoiles */}
-                        <div className="flex items-center mb-4 gap-1">
+                        <div className="flex items-center mb-3 gap-1">
                           {[...Array(5)].map((_, starIndex) => (
                             <Star
                               key={starIndex}
@@ -267,14 +267,14 @@ export default function TestimonialsCarousel({
                             WebkitLineClamp: 4,
                             WebkitBoxOrient: "vertical",
                             lineHeight: "1.3",
-                            maxHeight: "8rem",
+                            maxHeight: "9rem",
                           }}
                         >
                           "{testimonial.text}"
                         </blockquote>
 
                         {/* Profil - toujours en bas */}
-                        <div className="flex items-center mt-auto pt-1">
+                        <div className="flex items-center mt-0 pt-1">
                           <div className="relative">
                             <img
                               src={testimonial.image}
@@ -297,7 +297,7 @@ export default function TestimonialsCarousel({
                           </div>
                           <div className="ml-4 transition-all duration-300 min-w-0 flex-1">
                             <h4
-                              className={`font-semibold text-[12px] md:text-sm  transition-all duration-300 truncate
+                              className={`font-semibold text-[12px] md:text-sm  transition-all duration-300
                               ${
                                 darkMode
                                   ? "text-white group-hover:text-slate-200"
