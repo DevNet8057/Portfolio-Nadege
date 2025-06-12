@@ -9,9 +9,61 @@ import {
 } from "@/components/ui/carousel";
 import { Star } from "lucide-react";
 import * as React from "react";
-import type { Testimonial } from "../types";
+// Interface pour les témoignages
+interface Testimonial {
+  text: string;
+  name: string;
+  position: string;
+  image: string;
+}
 
-import { testimonials } from "../data/testimonial";
+// Import des images
+import jean from "../assets/jean jacques ze.jpg";
+import dieudonneImage from "../assets/dieudonne mven.jpg";
+import vivianeImage from "../assets/viviane besala.jpg";
+import pierreImage from "../assets/Pierre-Bleriot-Nyemeck-Mediatude-Info-TV-780x470.png";
+import nadegeImage from "../assets/viviane besala.jpg";
+import williamImage from "../assets/dieudonne mven.jpg";
+
+// Données des témoignages intégrées
+const testimonials: Testimonial[] = [
+  {
+    "text": "Nadège est une journaliste déterminée, au caractère bien trempé, qui avance toujours avec professionnalisme. Son adaptabilité et sa capacité à collaborer en font une interlocutrice précieuse. La qualité de ses reportages, toujours bien documentés et pertinents, en fait une collaboratrice de choix pour tout média exigeant.",
+    "name": "Dieudonne Mven",
+    "position": "PDG du groupe La Météo",
+    "image": dieudonneImage
+  },
+  {
+    "text": "Travailler avec Nadège a été une expérience enrichissante. Son approche méticuleuse et sa capacité à traduire des concepts complexes en récits accessibles ont donné une nouvelle dimension à notre campagne médiatique.",
+    "name": "Viviane Andrea",
+    "position": "Directrice commerciale à InfoTv",
+    "image": vivianeImage
+  },
+  {
+    "text": "J'apprécie particulièrement le travail de Nadège et sa détermination sans faille. Pour moi, elle incarne l'exemple même du journaliste engagé et passionné, un véritable modèle à suivre pour tous les jeunes qui aspirent à embrasser ce beau métier.",
+    "name": "Pierre Bleriot",
+    "position": "Directeur adjoint à InfoTv",
+    "image": pierreImage
+  },
+  {
+    "text": "Nadège possède un talent rare pour capturer l'authenticité des histoires humaines. Ses reportages sur notre chaîne ont été réalisés avec une sensibilité et une profondeur qui ont touché tous nos membres.",
+    "name": "Nadege Foudjio",
+    "position": "Chef de édition et de la programmation",
+    "image": nadegeImage
+  },
+  {
+    "text": "La série d'articles que Nadège a écrite pour notre rédaction a généré un engagement sans précédent. Sa plume incisive et son approche journalistique rigoureuse en font une collaboratrice exceptionnelle.",
+    "name": "Jean Jacques Ze",
+    "position": "Journaliste à InfoTv",
+    "image": jean
+  },
+  {
+    "text": "Les reportages de Nadège m'ont profondément marqué. Son talent pour raconter des histoires avec justesse et émotion fait d'elle une journaliste à suivre absolument.",
+    "name": "Kamdem William",
+    "position": "Téléspectateur de la chaîne InfoTv",
+    "image": williamImage
+  }
+];
 
 interface TestimonialsProps {
   darkMode?: boolean;
@@ -20,6 +72,7 @@ interface TestimonialsProps {
   changeTestimonial?: (index: number) => void;
   testimonialContainerRef?: React.RefObject<HTMLDivElement | null>;
 }
+
 export default function TestimonialsCarousel({
   darkMode = false,
   testimonials: propTestimonials = testimonials,
@@ -123,7 +176,7 @@ export default function TestimonialsCarousel({
             </svg>
           </button>
 
-          {/* Bouton de navigation unique */}
+          {/* Bouton droite */}
           <button
             onClick={goToNext}
             className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:translate-x-1 ${
@@ -170,7 +223,7 @@ export default function TestimonialsCarousel({
                         ? "bg-gray-800/80 border-gray-700/50 hover:bg-gray-800/95 hover:border-gray-600/80 hover:shadow-gray-900/30"
                         : "bg-white/90 backdrop-blur-sm border-gray-200/40 shadow-lg hover:bg-white hover:border-gray-300/60 hover:shadow-slate-400/15"
                     }
-                    hover:-translate-y-1 h-80`} // Hauteur fixe de 320px
+                    hover:-translate-y-1 h-80`}
                   >
                     <CardContent className="p-6 h-full flex flex-col relative overflow-hidden">
                       {/* Effet de lueur subtile au hover */}
@@ -203,7 +256,7 @@ export default function TestimonialsCarousel({
 
                         {/* Texte du témoignage avec hauteur fixe et overflow */}
                         <blockquote
-                          className={`text-sm italic mb-1 flex-grow leading-relaxed transition-all duration-300 overflow-hidden
+                          className={`text-[12px] md:text-sm italic mb-1 flex-grow leading-relaxed transition-all duration-300 overflow-hidden
                           ${
                             darkMode
                               ? "text-gray-300 group-hover:text-gray-200"
@@ -214,7 +267,7 @@ export default function TestimonialsCarousel({
                             WebkitLineClamp: 4,
                             WebkitBoxOrient: "vertical",
                             lineHeight: "1.3",
-                            maxHeight: "8rem", // 4 lignes * 1.5 line-height
+                            maxHeight: "8rem",
                           }}
                         >
                           "{testimonial.text}"
