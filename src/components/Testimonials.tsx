@@ -297,7 +297,7 @@ export default function TestimonialsCarousel({
                           </div>
                           <div className="ml-4 transition-all duration-300 min-w-0 flex-1">
                             <h4
-                              className={`font-semibold text-sm transition-all duration-300 truncate
+                              className={`font-semibold text-[12px] md:text-sm  transition-all duration-300 truncate
                               ${
                                 darkMode
                                   ? "text-white group-hover:text-slate-200"
@@ -307,7 +307,7 @@ export default function TestimonialsCarousel({
                               {testimonial.name}
                             </h4>
                             <p
-                              className={`text-xs transition-all duration-300 truncate
+                              className={`text-[9px] md:text-xs  transition-all duration-300
                               ${
                                 darkMode
                                   ? "text-gray-400 group-hover:text-gray-300"

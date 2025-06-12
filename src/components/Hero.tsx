@@ -105,7 +105,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode, scrollToSection }) => {
         </div>
       </div>
 
-      {/* Social Media Links - Responsive positioning */}
+      {/* Social Media Links - Vertical positioning */}
       <div className="absolute bottom-8 right-4 sm:right-6 md:right-8 flex flex-col gap-3 sm:gap-4">
         {socialLinks.map((social) => (
           <a
@@ -115,6 +115,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode, scrollToSection }) => {
             rel="noopener noreferrer"
             className={`
               p-2 sm:p-3 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-110
+              flex items-center justify-center
               ${darkMode 
                 ? "bg-white/10 text-white hover:bg-white/20" 
                 : "bg-black/20 text-white hover:bg-black/30"
@@ -123,32 +124,7 @@ const Hero: React.FC<HeroProps> = ({ darkMode, scrollToSection }) => {
             `}
             aria-label={`Suivez-moi sur ${social.name}`}
           >
-            <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-              {social.icon}
-            </div>
-          </a>
-        ))}
-      </div>
-
-      {/* Version mobile alternative - liens en bas centré sur très petits écrans */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex flex-row gap-3 sm:hidden">
-        {socialLinks.map((social) => (
-          <a
-            key={social.name}
-            href={social.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`
-              p-2 rounded-full backdrop-blur-sm transition-all duration-300 transform hover:scale-110
-              ${darkMode 
-                ? "bg-white/10 text-white hover:bg-white/20" 
-                : "bg-black/20 text-white hover:bg-black/30"
-              }
-              ${social.color}
-            `}
-            aria-label={`Suivez-moi sur ${social.name}`}
-          >
-            <div className="w-4 h-4">
+            <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 flex items-center justify-center">
               {social.icon}
             </div>
           </a>
