@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import photoPortrait from "../assets/images/photoPortrait.jpeg"
-import CVNadege from '../assets/CV Professionnel nadege yugain.pdf';
+import CVNadege from '../assets/CV_Nadege_Yugain.pdf';
 
 interface AboutProps {
   darkMode: boolean;
