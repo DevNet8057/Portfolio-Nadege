@@ -1,4 +1,11 @@
 import type { PortfolioItem } from "../types";
+import Ambassadeurphoto from "../assets/images/Thierry_marchand.jpeg"
+import Policephoto from "../assets/images/parade du 20 mai.png"
+import SceancePhoto  from "../assets/images/Mini-réseaux.jpeg"
+import BoulotPhoto  from "../assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (1).jpeg"
+
+
+
 export const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
@@ -81,7 +88,7 @@ Une attente immense
   },
   {
     id: 3,
-    image: "src/assets/images/Mini-réseaux.jpeg",
+    image: SceancePhoto,
     title: "",
     category: "Photos",
     description: "Scéance de travail sur les Mini-réseau ",
@@ -143,7 +150,7 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
     id: 30,
     // miniature test
 
-    thumbnail: "/src/assets/images/Thierry_marchand.jpeg",
+    thumbnail: Ambassadeurphoto,
     image:
       "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
     title: "Ambassadeur de France au cameroun reçu par le MINAT.",
@@ -157,7 +164,7 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
     id: 6,
     image:
       "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", // miniature test
-    thumbnail: "/src/assets/images/parade du 20 mai.png",
+    thumbnail: Policephoto,
     title: "La police peaufine son déploiement",
     category: "Vidéos",
     videoUrl: "https://youtu.be/_iiZgLndb8Q",
@@ -176,7 +183,7 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
   },
   {
     id: 8,
-    image: "/src/assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (1).jpeg",
+    image: BoulotPhoto,
     title: "",
     category: "Photos",
     description: "Aux boulot",
