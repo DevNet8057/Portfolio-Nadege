@@ -94,6 +94,7 @@ const Notification = ({ show, type, message, onClose, darkMode }: NotificationPr
 
 const Contact = ({ darkMode, services }: ContactProps) => {
   const form = useRef<HTMLFormElement>(null);
+  const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState<{
     show: boolean;
     type: 'success' | 'error';
@@ -112,35 +113,52 @@ const Contact = ({ darkMode, services }: ContactProps) => {
     setNotification(prev => ({ ...prev, show: false }));
   };
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    
     if (!form.current) return;
+    
+    setIsLoading(true);
 
-    emailjs
-      .sendForm(
-        "service_qijsbca", // Remplace par ton service ID
-        "template_0e5bvui", // Remplace par ton template ID
+    try {
+      // Vérifiez que EmailJS est bien initialisé
+      const result = await emailjs.sendForm(
+        "service_qijsbca", // Votre Service ID
+        "template_0e5bvui", // Votre Template ID
         form.current,
-        {
-          publicKey: "dUPFbEqVHIUny_IQb", // Remplace par ta clé publique
-        }
-      )
-      .then(
-        () => {
-          console.log("SUCCESS!");
-          showNotification('success', 'Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.');
-          form.current?.reset();
-        },
-        (error: unknown) => {
-          if (typeof error === "object" && error && "text" in error) {
-            console.log("FAILED...", (error as { text: string }).text);
-          } else {
-            console.log("FAILED...", error);
-          }
-          showNotification('error', 'Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer ou me contacter directement par email.');
-        }
+        "dUPFbEqVHIUny_IQb" // Votre Public Key
       );
+
+      console.log("Email envoyé avec succès:", result);
+      showNotification(
+        'success', 
+        'Votre message a été envoyé avec succès ! Je vous répondrai dans les plus brefs délais.'
+      );
+      form.current.reset();
+      
+    } catch (error) {
+      console.error("Erreur lors de l'envoi:", error);
+      
+      let errorMessage = "Une erreur est survenue lors de l'envoi du message.";
+      
+      // Messages d'erreur plus spécifiques
+      if (error instanceof Error) {
+        if (error.message.includes('Invalid service ID')) {
+          errorMessage = "Erreur de configuration du service email. Veuillez contacter l'administrateur.";
+        } else if (error.message.includes('Invalid template ID')) {
+          errorMessage = "Erreur de template email. Veuillez contacter l'administrateur.";
+        } else if (error.message.includes('Invalid public key')) {
+          errorMessage = "Erreur d'authentification. Veuillez contacter l'administrateur.";
+        } else if (error.message.includes('Network')) {
+          errorMessage = "Problème de connexion. Vérifiez votre connexion internet et réessayez.";
+        }
+      }
+      
+      showNotification('error', errorMessage + " Vous pouvez aussi me contacter directement par email : nadegeyugain10@gmail.com");
+      
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -212,11 +230,12 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                           darkMode ? "text-gray-300" : "text-gray-700"
                         }`}
                       >
-                        Nom
+                        Nom *
                       </label>
                       <input
                         type="text"
                         id="name"
+                        name="user_name"
                         className={`w-full px-4 py-3 rounded-lg border backdrop-blur-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                           darkMode
                             ? "bg-gray-800/80 border-gray-600/60 text-gray-100 focus:border-blue-400"
@@ -224,7 +243,7 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                         }`}
                         placeholder="Votre nom"
                         required
-                        name="user_name"
+                        disabled={isLoading}
                       />
                     </div>
                     <div>
@@ -234,7 +253,7 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                           darkMode ? "text-gray-300" : "text-gray-700"
                         }`}
                       >
-                        Email
+                        Email *
                       </label>
                       <input
                         type="email"
@@ -247,6 +266,7 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                         }`}
                         placeholder="Votre email"
                         required
+                        disabled={isLoading}
                       />
                     </div>
                   </div>
@@ -257,7 +277,7 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                         darkMode ? "text-gray-300" : "text-gray-700"
                       }`}
                     >
-                      Sujet
+                      Sujet *
                     </label>
                     <select
                       name="subject"
@@ -268,7 +288,9 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                           : "bg-white/80 border-gray-300/60 text-gray-800 focus:border-blue-500"
                       }`}
                       required
+                      disabled={isLoading}
                     >
+                      <option value="">Sélectionnez un sujet</option>
                       {services.map((service, index) => (
                         <option key={index} value={service.title}>
                           {service.title}
@@ -284,10 +306,11 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                         darkMode ? "text-gray-300" : "text-gray-700"
                       }`}
                     >
-                      Message
+                      Message *
                     </label>
                     <textarea
                       id="message"
+                      name="message"
                       rows={5}
                       className={`w-full px-4 py-3 rounded-lg border backdrop-blur-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none ${
                         darkMode
@@ -295,20 +318,30 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                           : "bg-white/80 border-gray-300/60 text-gray-800 focus:border-blue-500"
                       }`}
                       placeholder="Votre message"
-                      name="message"
                       required
+                      disabled={isLoading}
                     ></textarea>
                   </div>
                   <button
                     type="submit"
-                    className={`w-full px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl ${
+                    disabled={isLoading}
+                    className={`w-full px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none ${
                       darkMode
                         ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white"
                         : "bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white"
                     }`}
                   >
-                    <i className="fas fa-paper-plane mr-2"></i>
-                    Envoyer le message
+                    {isLoading ? (
+                      <>
+                        <i className="fas fa-spinner fa-spin mr-2"></i>
+                        Envoi en cours...
+                      </>
+                    ) : (
+                      <>
+                        <i className="fas fa-paper-plane mr-2"></i>
+                        Envoyer le message
+                      </>
+                    )}
                   </button>
                 </form>
               </div>
@@ -391,6 +424,8 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                     {/* YouTube */}
                     <a
                       href="https://www.youtube.com/@nadegeyugain"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-md ${
                         darkMode
                           ? "bg-gray-800/80 hover:bg-gradient-to-br hover:from-red-600 hover:to-red-500 text-gray-300 hover:text-white"
@@ -403,6 +438,8 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                     {/* LinkedIn */}
                     <a
                       href="https://www.linkedin.com/in/nadege-yugain-b901ba352/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-md ${
                         darkMode
                           ? "bg-gray-800/80 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-500 text-gray-300 hover:text-white"
@@ -415,6 +452,8 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                     {/* Twitter */}
                     <a
                       href="https://x.com/Nadegeyugain"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-md ${
                         darkMode
                           ? "bg-gray-800/80 hover:bg-gradient-to-br hover:from-blue-400 hover:to-blue-300 text-gray-300 hover:text-white"
@@ -427,6 +466,8 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                     {/* Instagram */}
                     <a
                       href="https://www.instagram.com/nadege_yugain/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-md ${
                         darkMode
                           ? "bg-gray-800/80 hover:bg-gradient-to-br hover:from-pink-600 hover:to-purple-600 text-gray-300 hover:text-white"
@@ -439,6 +480,8 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                     {/* Facebook */}
                     <a
                       href="https://www.facebook.com/nadegeyugain"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-md ${
                         darkMode
                           ? "bg-gray-800/80 hover:bg-gradient-to-br hover:from-blue-700 hover:to-blue-600 text-gray-300 hover:text-white"
