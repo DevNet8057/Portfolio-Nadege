@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import photoPortrait from "../assets/images/photoPortrait.jpeg"
-import CVNadege from '../assets/CV_Nadege_Yugain.pdf';
+import CVNadege from '../assets/images/Cv_nadege_yugain.pdf';
 
 interface AboutProps {
   darkMode: boolean;
@@ -10,9 +10,12 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
   const [expandedParagraph, setExpandedParagraph] = useState(0);
 
   const paragraphs = [
-    "Journaliste expérimentée avec plus de huit ans d’expérience dans les médias nationaux, je me suis spécialisée dans le reportage, les entretiens et l’analyse. Mon parcours m’a permis d’occuper des postes clés, tels que chargée des éditions et des programmes chez InfoTV, directrice de l’information à CSP TV, puis directrice des programmes à Afrique+ TV. Ces expériences ont renforcé ma capacité à produire des contenus à la fois rigoureux et inspirants, tout en développant une forte adaptabilité et un esprit critique aiguisé.",
-    "Ma démarche journalistique repose sur la rigueur, l’éthique et l’empathie. Formée au BTS Journalisme à l’Institut Universitaire Siantou, j’ai débuté ma carrière en coordonnant les éditions de journaux à Radio‑Siantou, avant de collaborer avec des structures telles que Canal 2 International et Radio Royal TV. Mes compétences incluent la rédaction et l’édition, la conduite d’interviews, la réalisation de reportages de terrain, la vérification des faits, ainsi que la présentation et la réalisation de journaux. Chaque histoire est pour moi une opportunité de donner une voix à celles et ceux qui n’en ont pas, en la racontant avec précision et sensibilité.",
-    "Parallèlement à ma carrière journalistique, je m’intéresse vivement à l’entrepreneuriat et au développement personnel. Bien que je n’aie pas encore eu l’occasion de participer activement à des événements de formation, de réseautage ou de collaboration, je suis ouverte à toute opportunité en ce sens. Je considère chaque interaction comme une chance d’apprentissage, convaincue que les échanges et les conseils sont essentiels pour progresser et enrichir ma pratique professionnelle."
+   
+   " Journaliste expérimentée avec plus de dix ans d’expérience dans les médias nationaux, je me suis spécialisée dans le reportage, les entretiens et l’analyse. Mon parcours m’a permis d’occuper des postes clés, tels que chargée des éditions et des programmes chez InfoTV, directrice de l’information à CSP TV, puis directrice des programmes à Afrique+ TV. Ces expériences ont renforcé ma capacité à produire des contenus à la fois rigoureux et inspirants, tout en développant une forte adaptabilité et un esprit critique aiguisé.",
+
+"Ma démarche journalistique repose sur la rigueur, l’éthique et l’empathie. Formée au BTS Journalisme à l’Institut Universitaire Siantou, j’ai débuté ma carrière en coordonnant les éditions de journaux à Radio-Siantou, avant de collaborer avec des structures telles que Canal 2 International et Radio Royal TV. Mes compétences incluent la rédaction et l’édition, la conduite d’interviews, la réalisation de reportages de terrain, la vérification des faits, ainsi que la présentation et la réalisation de journaux. Chaque histoire est pour moi une opportunité de donner une voix à celles et ceux qui n’en ont pas, en la racontant avec précision et sensibilité.",
+
+"Parallèlement à ma carrière journalistique, je m’intéresse vivement à l’entrepreneuriat et au développement personnel. Fondatrice du projet Lumières d’Afrique, j’y mets en lumière les talents, les initiatives et les réussites qui bâtissent le futur du continent. Bien que je n’aie pas encore eu l’occasion de participer activement à des événements de formation, de réseautage ou de collaboration, je suis ouverte à toute opportunité en ce sens. Je considère chaque interaction comme une chance d’apprentissage, convaincue que les échanges et les conseils sont essentiels pour progresser et enrichir ma pratique professionnelle."
   ];
 
   const handleExpandNext = () => {
@@ -92,7 +95,7 @@ const About: React.FC<AboutProps> = ({ darkMode }) => {
             
             <a
               href={CVNadege}
-              download="CV_Nadege_Yugain.pdf"
+              download="Cv_nadege_yugain.pdf"
               className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 transform hover:scale-105 ${
                 darkMode
                   ? "bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white shadow-lg hover:shadow-xl"
