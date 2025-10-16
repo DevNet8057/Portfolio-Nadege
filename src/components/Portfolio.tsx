@@ -171,7 +171,7 @@ interface LazyImageProps {
   onLoad?: () => void;
 }
 
-// Composant LazyImage
+// Composant LazyImage optimisé avec responsive images
 const LazyImage: React.FC<LazyImageProps> = ({
   src,
   alt,
@@ -191,7 +191,7 @@ const LazyImage: React.FC<LazyImageProps> = ({
           observer.disconnect();
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '50px' }
     );
 
     if (imgRef.current) {
@@ -201,25 +201,47 @@ const LazyImage: React.FC<LazyImageProps> = ({
     return () => observer.disconnect();
   }, []);
 
+  // Fonction pour générer les URLs optimisées
+  const getOptimizedSrc = (baseSrc: string, width: number) => {
+    // Simulation d'optimisation d'URL (remplacer par votre logique CDN)
+    return `${baseSrc}?w=${width}&q=80&format=webp`;
+  };
+
+  const getOptimizedSrcFallback = (baseSrc: string, width: number) => {
+    return `${baseSrc}?w=${width}&q=80`;
+  };
+
   return (
     <div ref={imgRef} className={className} style={style}>
       {isInView && (
-        <img
-          src={src}
-          alt={alt}
-          className={`transition-opacity duration-300 ${
-            isLoaded ? "opacity-100" : "opacity-0"
-          } w-full h-full object-cover`}
-          onLoad={() => {
-            setIsLoaded(true);
-            onLoad?.();
-          }}
-          loading="lazy"
-        />
+        <picture>
+          {/* WebP pour les navigateurs modernes */}
+          <source
+            srcSet={`${getOptimizedSrc(src, 400)} 400w, ${getOptimizedSrc(src, 800)} 800w, ${getOptimizedSrc(src, 1200)} 1200w`}
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            type="image/webp"
+          />
+          {/* Fallback pour les anciens navigateurs */}
+          <img
+            src={getOptimizedSrcFallback(src, 800)}
+            srcSet={`${getOptimizedSrcFallback(src, 400)} 400w, ${getOptimizedSrcFallback(src, 800)} 800w, ${getOptimizedSrcFallback(src, 1200)} 1200w`}
+            sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            alt={alt}
+            className={`transition-opacity duration-300 ${
+              isLoaded ? "opacity-100" : "opacity-0"
+            } w-full h-full object-cover`}
+            onLoad={() => {
+              setIsLoaded(true);
+              onLoad?.();
+            }}
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
       )}
       {!isLoaded && isInView && (
         <div className="w-full h-full bg-gray-200 dark:bg-gray-700 animate-pulse flex items-center justify-center">
-          <div className="text-gray-400">⏳</div>
+          <div className="text-gray-400 text-sm">⏳</div>
         </div>
       )}
     </div>
@@ -231,16 +253,36 @@ const generateVideoThumbnail = (videoUrl: string): Promise<string> => {
     const video = document.createElement("video");
     video.crossOrigin = "anonymous";
     video.currentTime = 1; // Prendre la frame à 1 seconde
+    video.preload = "metadata"; // Charger seulement les métadonnées
 
-    video.onloadeddata = () => {
+    // Vérifier si c'est une URL YouTube pour utiliser l'API thumbnail
+    if (videoUrl.includes('youtube.com') || videoUrl.includes('youtu.be')) {
+      const videoId = videoUrl.includes('youtu.be')
+        ? videoUrl.split('/').pop()?.split('?')[0]
+        : videoUrl.split('v=')[1]?.split('&')[0];
+
+      if (videoId) {
+        // Utiliser le thumbnail de haute qualité de YouTube
+        resolve(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`);
+        return;
+      }
+    }
+
+    // Pour les autres vidéos, utiliser la méthode canvas optimisée
+    const videoElement = document.createElement("video");
+    videoElement.crossOrigin = "anonymous";
+    videoElement.currentTime = 1; // Prendre la frame à 1 seconde
+    videoElement.preload = "metadata"; // Charger seulement les métadonnées
+
+    videoElement.onloadedmetadata = () => {
       const canvas = document.createElement("canvas");
-      canvas.width = video.videoWidth || 320;
-      canvas.height = video.videoHeight || 180;
+      canvas.width = Math.min(video.videoWidth || 320, 320); // Limiter la taille
+      canvas.height = Math.min(video.videoHeight || 180, 180);
 
       const ctx = canvas.getContext("2d");
       if (ctx) {
-        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-        resolve(canvas.toDataURL());
+        ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+        resolve(canvas.toDataURL('image/jpeg', 0.8)); // Compression JPEG
       } else {
         // Fallback: image par défaut
         resolve(
@@ -249,14 +291,14 @@ const generateVideoThumbnail = (videoUrl: string): Promise<string> => {
       }
     };
 
-    video.onerror = () => {
+    videoElement.onerror = () => {
       // Fallback: image par défaut
       resolve(
         "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIwIiBoZWlnaHQ9IjE4MCIgdmlld0JveD0iMCAwIDMyMCAxODAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMjAiIGhlaWdodD0iMTgwIiBmaWxsPSIjMzc0MTUxIi8+Cjxwb2x5Z29uIHBvaW50cz0iMTIwLDYwIDE4MCwxMjAgMTIwLDE4MCIgZmlsbD0iI0Y5RkFGQiIvPgo8L3N2Zz4K"
       );
     };
 
-    video.src = videoUrl;
+    videoElement.src = videoUrl;
   });
 };
 

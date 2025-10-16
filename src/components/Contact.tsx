@@ -206,8 +206,8 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                 darkMode ? "text-gray-300" : "text-gray-600"
               }`}
             >
-              Vous avez un projet journalistique ou une collaboration à proposer ?
-              N'hésitez pas à me contacter.
+              Vous avez un projet, un post, une collaboration ou toute autre idée à me proposer ?
+              N’hésitez pas à me contacter par WhatsApp ou par e-mail !
             </p>
           </div>
 
@@ -396,7 +396,7 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                     <div>
                       <h4 className="font-semibold mb-1">Téléphone</h4>
                       <p className={darkMode ? "text-gray-300" : "text-gray-600"}>
-                        +237 6 99 *****
+                        6 20 99 03 07
                       </p>
                     </div>
                   </div>
@@ -475,6 +475,20 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                       }`}
                     >
                       <i className="fab fa-instagram text-lg"></i>
+                    </a>
+
+                    {/* Facebook */}
+                    <a
+                      href="https://www.facebook.com/profile.php?id=61580281211865"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`w-12 h-12 rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-md ${
+                        darkMode
+                          ? "bg-gray-800/80 hover:bg-gradient-to-br hover:from-blue-600 hover:to-blue-500 text-gray-300 hover:text-white"
+                          : "bg-gray-100/80 hover:bg-gradient-to-br hover:from-blue-500 hover:to-blue-600 text-gray-700 hover:text-white"
+                      }`}
+                    >
+                      <i className="fab fa-facebook-f text-lg"></i>
                     </a>
 
                   </div>
