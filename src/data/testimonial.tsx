@@ -9,7 +9,7 @@ export const testimonials: Testimonial[] = [
   
   {
     "text": "Je suis Nadège depuis ses rubriques santé à La Matinal. Je l’appréciais aussi dans Les Amazones et quand elle présentait le journal sur InfoTV. Toujours claire, engagée et proche du public.",
-    "name": "Isaddora Kada",
+    "name": "Isadora Kada",
     "position": "téléspectatrice",
     "image": IsadoraImage
   },
