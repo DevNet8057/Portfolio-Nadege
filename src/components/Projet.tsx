@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import img_nadege from "@/assets/nadege page1.jpg"
 
 
 interface ProjetProps {
@@ -78,7 +79,7 @@ function Projet({ darkMode }: ProjetProps) {
             <div className="flex flex-col md:flex-row items-center gap-10">
               <div className="md:w-3/5 overflow-hidden rounded-lg shadow-xl">
                 <img
-                  src="/src/assets/nadege page1.jpg"
+                  src={img_nadege}
                   alt="photo de Nadège Yugain"
                   className="w-full h-auto object-cover object-top"
                 />
