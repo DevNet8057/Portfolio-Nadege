@@ -1,6 +1,7 @@
 import emailjs from "@emailjs/browser";
 import React, { useRef, useState } from "react";
 import type { Service } from "../types";
+import qrCode from "../assets/images/code_QR.jpg";
 
 interface ContactProps {
   darkMode: boolean;
@@ -398,6 +399,7 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                       <p className={darkMode ? "text-gray-300" : "text-gray-600"}>
                         6 20 99 03 07
                       </p>
+                      
                     </div>
                   </div>
                   <div className="flex items-start">
@@ -492,6 +494,16 @@ const Contact = ({ darkMode, services }: ContactProps) => {
                     </a>
 
                   </div>
+                  <div className="mt-4">
+                        <p className={`text-sm mb-2 ${darkMode ? "text-gray-400" : "text-gray-500"}`}>
+                          Scannez ce QR code pour m'écrire sur WhatsApp :
+                        </p>
+                        <img
+                          src={qrCode}
+                          alt="QR Code WhatsApp"
+                          className="w-32 h-32 rounded-lg shadow-md"
+                        />
+                      </div>
                 </div>
               </div>
             </div>
@@ -511,4 +523,4 @@ const Contact = ({ darkMode, services }: ContactProps) => {
   );
 };
 
-export default Contact;
+export default Contact; 
