@@ -1,7 +1,8 @@
-import img_nadege from "@/assets/nadege page1.jpg";
 import { useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
+
+const img_nadege = "https://res.cloudinary.com/dsg2bftdn/image/upload/w_500,f_auto,q_auto/v1763711113/nadege_page1_vlufan.jpg"
 
 interface Article {
   id: string;
@@ -98,6 +99,7 @@ function Projet({ darkMode }: ProjetProps) {
                   src={img_nadege}
                   alt="photo de Nadège Yugain"
                   className="w-full h-auto object-cover object-top"
+                  loading="lazy"
                 />
               </div>
               <div className="md:w-4/5">
