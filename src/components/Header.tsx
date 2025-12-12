@@ -26,10 +26,10 @@ const Header: React.FC<HeaderProps> = ({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
 
-  // Filter navigation items based on current page
+ 
   const currentNavItems = location.pathname === '/projet'
-    ? NAV_ITEMS.filter(item => item.id === 'hero') // Only show "Accueil" on projet page
-    : NAV_ITEMS; // Show all items on home page
+    ? NAV_ITEMS.filter(item => item.id === 'hero')
+    : NAV_ITEMS;
 
   return (
     <header

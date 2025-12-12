@@ -84,7 +84,6 @@ const Hero: React.FC<HeroProps> = ({ darkMode, scrollToSection }) => {
       }}
     >
       <div className="container mx-auto px-4 h-full flex items-center">
-        {/* Contenu principal avec marge à droite pour éviter les liens sociaux */}
         <div className="max-w-2xl pr-4 lg:pr-20 xl:pr-24">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
             Journaliste Professionnelle
@@ -105,8 +104,6 @@ const Hero: React.FC<HeroProps> = ({ darkMode, scrollToSection }) => {
           </button>
         </div>
       </div>
-
-      {/* Social Media Links - Vertical positioning */}
       <div className="absolute bottom-8 right-4 sm:right-6 md:right-8 flex flex-col gap-3 sm:gap-4">
         {socialLinks.map((social) => (
           <a

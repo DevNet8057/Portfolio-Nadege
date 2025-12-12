@@ -1,27 +1,27 @@
+import ArmandClaudePhoto from "../assets/images/amand claude.jpeg";
+import ElimbiLobePhoto from "../assets/images/Elimbi lobe a vous la parole.jpeg";
+import SalleReunionPhoto from "../assets/images/En salle de reunion.jpeg";
+import FeteTravailPhoto from "../assets/images/Fete du travail.jpeg";
+import HonorableCabralLibiiPhoto from "../assets/images/Honorale Cabral Libii.jpeg";
+import HonorableCabralLibii2Photo from "../assets/images/Honorale Cabral Libii1.jpeg";
+import JosueOsihPhoto from "../assets/images/Josué osih.jpeg";
+import LocauxInfoTvPhoto from "../assets/images/Locaux de infoTv.jpeg";
+import AkereMunaInfoTv2Photo from "../assets/images/Me Akere muna a infoTv.jpeg";
+import AkereMunaInfoTvPhoto from "../assets/images/Me Akere muna a infoTv1.jpeg";
+import MincomPhoto from "../assets/images/Mincom.jpeg";
+import MinfopraFamillePhoto from "../assets/images/MINFOPRA.jpeg";
+import SceancePhoto from "../assets/images/Mini-réseaux.jpeg";
+import MinsatePhoto from "../assets/images/Minsate a infoTv.jpeg";
+import MrLeoPhoto from "../assets/images/Mr leo a infoTv.jpeg";
+import Policephoto from "../assets/images/parade du 20 mai.png";
+import PrJeanBahebeckPhoto from "../assets/images/Pr.Jean Bahebeck.jpeg";
+import TerrainPhoto from "../assets/images/terrain.jpeg";
+import Ambassadeurphoto from "../assets/images/Thierry_marchand.jpeg";
+import BoulotPhoto from "../assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (1).jpeg";
+import PhotoFamillePhoto from "../assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg";
+import MinfopraPhoto from "../assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (4).jpeg";
+import HonorableCabralPhoto from "../assets/images/WhatsApp Image 2025-05-31 at 02.01.10.jpeg";
 import type { PortfolioItem } from "../types";
-import Ambassadeurphoto from "../assets/images/Thierry_marchand.jpeg"
-import Policephoto from "../assets/images/parade du 20 mai.png"
-import SceancePhoto from "../assets/images/Mini-réseaux.jpeg"
-import BoulotPhoto from "../assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (1).jpeg"
-import MinfopraPhoto from "../assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (4).jpeg"
-import HonorableCabralPhoto from "../assets/images/WhatsApp Image 2025-05-31 at 02.01.10.jpeg"
-import AkereMunaInfoTvPhoto from "../assets/images/Me Akere muna a infoTv1.jpeg"
-import PhotoFamillePhoto from "../assets/images/WhatsApp Image 2025-05-31 at 02.01.10 (3).jpeg"
-import AkereMunaInfoTv2Photo from "../assets/images/Me Akere muna a infoTv.jpeg"
-import MinsatePhoto from "../assets/images/Minsate a infoTv.jpeg"
-import LocauxInfoTvPhoto from "../assets/images/Locaux de infoTv.jpeg"
-import ElimbiLobePhoto from "../assets/images/Elimbi lobe a vous la parole.jpeg"
-import MrLeoPhoto from "../assets/images/Mr leo a infoTv.jpeg"
-import PrJeanBahebeckPhoto from "../assets/images/Pr.Jean Bahebeck.jpeg"
-import HonorableCabralLibiiPhoto from "../assets/images/Honorale Cabral Libii.jpeg"
-import HonorableCabralLibii2Photo from "../assets/images/Honorale Cabral Libii1.jpeg"
-import SalleReunionPhoto from "../assets/images/En salle de reunion.jpeg"
-import MincomPhoto from "../assets/images/Mincom.jpeg"
-import MinfopraFamillePhoto from "../assets/images/MINFOPRA.jpeg"
-import FeteTravailPhoto from "../assets/images/Fete du travail.jpeg"
-import JosueOsihPhoto from "../assets/images/Josué osih.jpeg"
-import TerrainPhoto from "../assets/images/terrain.jpeg"
-import ArmandClaudePhoto from "../assets/images/amand claude.jpeg"
 
 export const portfolioItems: PortfolioItem[] = [
   {
@@ -78,7 +78,7 @@ hashtag#Journalisme hashtag#Presse hashtag#Média hashtag#Ethique hashtag#Inform
     category: "Articles",
     description: `
 Le 12 avril dernier, les Gabonais étaient appelés aux urnes pour élire leur
-       président, 19 mois après le coup d'État qui avait renversé Ali Bongo. Sans surprise, Brice Oligui Nguema,
+      président, 19 mois après le coup d'État qui avait renversé Ali Bongo. Sans surprise, Brice Oligui Nguema,
         chef de la transition et ancien commandant de la garde républicaine, a remporté l'élection avec 90,35 % 
         des suffrages, selon les résultats provisoires annoncés par le @Ministère de l'Intérieur du Gabon.
         Avec un taux de participation de 70,4 %, ce scrutin marque un retour à l'ordre constitutionnel 
@@ -151,10 +151,9 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
   },
   {
     id: 6,
+    thumbnail: MinsatePhoto,
     image:
       "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80",
-    thumbnail:
-      "https://media.licdn.com/dms/image/v2/D4D12AQHK5v3v0ZHn9g/article-cover_image-shrink_720_1280/B4DZXHmvA_G4AI-/0/1742810578887?e=1754524800&v=beta&t=71iUNQwSDCGhmP34GbWGwNeVy7LSYg3hMc2SNX3IedM",
     title:
       "🎤 Le Ministre de la Santé Publique, Dr Mamaouda Malachi, invité de A Vous la Parole sur InfoTV ! 📺",
     category: "Vidéos",
@@ -187,16 +186,6 @@ N'hésitez pas à partager vos idées et vos réflexions sur ce sujet crucial! �
     videoUrl: "https://youtu.be/_iiZgLndb8Q",
     description:
       " les éléments de la sûreté nationale font les derniers réglages",
-  },
-  {
-    id: 7,
-    image:
-      "https://media.licdn.com/dms/image/v2/D4D22AQGkx12fRGsoCg/feedshare-shrink_2048_1536/B4DZYvF1vtHsAo-/0/1744546790743?e=1752105600&v=beta&t=LfxAdxvV5hHjMci58PdI_F6PHUBIM4BjnjjGs2Wo0cA",
-
-    title: "",
-    category: "Photos",
-    description:
-      "Le MINFOPRA invite sur le plateau de  émission a vous la parole",
   },
   {
     id: 8,
@@ -406,7 +395,7 @@ La vaccination est un droit, un acte de solidarité, et une preuve que l'humanit
  #ProtectionEnfance #StopAuxViolences #BriserLeSilence #JusticePourLesEnfants #Sensibilisation`,
   },
 
- {
+  {
     id: 24,
     image: FeteTravailPhoto,
     title: "",
